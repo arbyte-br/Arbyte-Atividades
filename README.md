@@ -1,2 +1,4 @@
-# Arbyte-Atividades
-Nesse repositório serão entregues as listas de atividades dos alunos
+# INSTRUÇÕES DE USO.
+
+Acesse o link abaixo para visualizar o PDF com as instruções de como subir suas atividades no repositório!
+https://pt.scribd.com/document/465868441/Passo-a-Passo-GitHub-Atividades
