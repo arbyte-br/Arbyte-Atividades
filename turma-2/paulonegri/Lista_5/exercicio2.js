@@ -14,7 +14,7 @@ let numero2 = rs.questionInt("Digite o valor final = ")
 if(numero1 >= numero2){
     
     console.log(" O numero inicial deve ser menor que o numero final.")
-    
+
 }else if(numero1 < numero2){
     for(console.log(); numero1 <= numero2; numero1++){
         console.log(numero1)
