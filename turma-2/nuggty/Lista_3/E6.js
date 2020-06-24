@@ -1,8 +1,11 @@
 let rs = require('readline-sync');
 
-let letras = rs.question('Escreva uma palavra: ')
+let palavra = rs.question('Escreva uma palavra: ')
+let invertePalavra = '';
+let i = palavra.length - 1;
 
-while(letras) {
-    console.log(letras.split('').reverse('').join(''));
-    break;
+while(i >= 0){
+    invertePalavra += palavra[i];
+    i--;
 }
+console.log(invertePalavra);
