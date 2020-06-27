@@ -3,6 +3,17 @@
 // apenas o comando For.
 
 
+
+// for (inicio = 0; inicio % 5 == 0 && inicio <= 1000; inicio + 5){
+//     console.log( inicio)
+// }
+
+// ou
+
+
+
 for (let inicio = 0; inicio <= 1000; inicio = inicio + 5) {
     console.log(inicio);    
 }
+
+
