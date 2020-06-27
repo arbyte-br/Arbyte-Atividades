@@ -1,33 +1,13 @@
 let rs = require('readline-sync')
 
 let userText = rs.question("Por favor digite uma frase: \n")
+userText = userText.toLocaleLowerCase()
+let tamanho = userText.length
 
-	
-
-
-let text = userText.length
-
-for(let x = 0; x <= text; x ++) {
-    switch(userText.charAt(x)){
-        
-    case "a":
-        console.log("A")
-    break;
-    case "e":
-        console.log("E")
-    break;
-    case "i":
-        console.log("I")
-    break;
-    case "o":
-        console.log("O")
-    break;
-    case "u":
-        console.log("U")
-    break;
-    default:
-    console.log(userText.charAt(x))
-    break;
-        
+for(let i = 0; i < tamanho; i++) {
+    if (userText.charAt(i) === 'a' || userText.charAt(i) === 'e' || userText.charAt(i) === 'i' || userText.charAt(i) === 'o' || userText.charAt(i) === 'u'){
+        console.log(userText.charAt(i).toUpperCase())    
+}   else {
+        console.log(userText.charAt(i))
 }
 }
