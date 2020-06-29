@@ -2,9 +2,18 @@
 //em maiúscula (obrigatório usar FOR)EX: abelhaO algoritmo imprimeAbElhA
 
 let rs=require("readline-sync")
-let palavra= rs.question("Digite qualquer palavra!\n")
+let palavra = rs.question("Digite qualquer palavra!\n").toLowerCase()
+let tamanho = palavra.length
 
-for(palavra !== "exit"){
-    console.log(palavra.)
-
-}    toUpperCase()
+for(let pg; pg !== "não"; null){
+    pg = rs.question("Voce gostaria de ver as vogais dessa palavra maiusculas?(Responda com sim ou não)").toLowerCase()
+    for(let i=0;i<tamanho;i++){
+        if(palavra.charAt(i) === "a"||palavra.charAt(i) === "e"||palavra.charAt(i) === "i"||palavra.charAt(i) === "o"||palavra.charAt(i) === "u"){
+            console.log(palavra.charAt(i).toUpperCase().slice(palavra))
+        }else{
+            console.log(palavra.charAt(i))
+        }
+    }
+    pg = rs.question("Voce gostaria de ver as vogais de uma nova em palavra maiusculas?(Responda com sim ou não)").toLowerCase()
+    
+}
