@@ -3,13 +3,16 @@
 //execução do programa tantas vezes quantas o usuário indicar.
 
 let rs = require("readline-sync")
-let numero = rs.question("Digite um numero: ")
-//let pg
-//while(pg!=="não"){
+let numero 
 
-    for(let x=1; x<=numero; x++){
-        numero = numero*x       
+
+    for(let pg; pg!=="nao"; ){
+        numero = rs.questionInt("Digite um numero: ")
+        for(let i=1; i<=numero; i++){
+            numero = (numero * i)
+                   
+        }
+    console.log("o fatorial do seu numero é " + numero)  
+    pg = rs.question("Gostaria de saber o fatorial deum novo numero?(sim ou nao) ")
+    
     }
-    console.log("o fatorial do seu numero é" + numero)  
-//pg = rs.question("Gostaria de saber o fatorial deum novo numero?")
-//}
