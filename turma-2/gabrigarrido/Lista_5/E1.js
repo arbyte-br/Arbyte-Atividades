@@ -1,9 +1,24 @@
-var rs = require('readline-sync');
+ /* Exercicio 01*/
+ 
+  var rs = require("readline-sync")
+  
+ 
+  var palavra = rs.question("Escreva uma palavra");
+  //pergunta.charAt(())
+  var size = palavra.length;
+  var palavraReservada = "";
 
-numero = rs.questionInt("Por Favor informe um número qualquer: \n")
-contador = 0
+ for(var i = 0; i < size; i++){
+     var letra = palavra.charAt(i);
+     console.log(letra)
+     if(letra == "a"){
+        palavraReservada = palavraReservada + letra.toUpperCase(); // Mesma coisa que palavraReservada += letra.toUpperCase();
+     }else{
+       palavraReservada+= letra;
+     }
+     
+ }
 
-while(contador < numero){
-    console.log("BIP BIP")
-    contador++
-}
+ console.log(palavraReservada);
+
+

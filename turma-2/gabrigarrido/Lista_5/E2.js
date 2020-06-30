@@ -1,15 +1,7 @@
-var rs = require('readline-sync');
+var rs = require('readline-sync')
+var numero1 = rs.questionInt("Entre com o Valor Inicial")
+var numero2 = rs.questionInt("Entre com o Valor Final")
 
-var primeiroNumero = rs.questionFloat("Digite um número: ")
-var segundoNumero = rs.questionFloat("Digite um segundo número: ")
-
-// var contador = 0
-// var resultado = 0
-
-// while(contador < segundoNumero){
-//     resultado = resultado+primeiroNumero;
-//     contador++
-// }
-
-// console.log(resultado)
-
+for(var i = numero1; i <= numero2; i++) { 
+        console.log(i)    
+}
