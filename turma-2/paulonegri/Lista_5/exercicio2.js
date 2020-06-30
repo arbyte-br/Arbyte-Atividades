@@ -8,7 +8,7 @@ let rs= require("readline-sync")
 console.log("Seja bem vindo!")
 pergunta = rs.question("Gostaria de ver a sequencia desses numeros?")
 
-for(null;pergunta !== "não";null){
+for(null;pergunta !== "nao";null){
     let numero1 = rs.questionInt("Digite o valor inicial = ")
     let numero2 = rs.questionInt("Digite o valor final = ")
 

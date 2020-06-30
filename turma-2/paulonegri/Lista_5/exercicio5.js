@@ -4,12 +4,12 @@
 
 let rs = require("readline-sync")
 let numero = rs.question("Digite um numero: ")
+//let pg
+//while(pg!=="não"){
 
-
-for(let x=1; x<=numero; x++){
-    
-    numero = numero*x
-   
-}
-console.log("o fatorial do seu numero é" + numero)
-  
+    for(let x=1; x<=numero; x++){
+        numero = numero*x       
+    }
+    console.log("o fatorial do seu numero é" + numero)  
+//pg = rs.question("Gostaria de saber o fatorial deum novo numero?")
+//}
