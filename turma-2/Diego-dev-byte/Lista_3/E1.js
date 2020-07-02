@@ -8,11 +8,13 @@
 
 let rs = require('readline-sync')
 
-let contador = 0
 let usuario = rs.questionInt('Insira um número \n ')
 
-for (let i = 0; contador !== usuario; i ++)
-while (contador !== usuario){
+for (let i = 0; i !== usuario; i ++){
     console.log('BIP BIP')
-    contador ++
+    
 }
+
+/* while (contador !== usuario){
+    console.log('BIP BIP')
+    contador ++ */
