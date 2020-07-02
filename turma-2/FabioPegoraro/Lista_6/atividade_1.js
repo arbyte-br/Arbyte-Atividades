@@ -1,35 +1,39 @@
-
-let rs = require("readline-sync")
-
-let NomeJogadorA = rs.question("Jogador 'A' Qual o seu nome?\n")
-let NomeJogadorB = rs.question("Jogador 'B' Qual o seu nome?\n")
-
-let numerodeperguntas = 5
-
-let numerosiguais = []
-
-let listadenumerosjogadorA = []
-console.log("_____________________\n")
-console.log(NomeJogadorA, "é a sua vez!")
-for (let i = 0; i < numerodeperguntas; i++){
-    let numerosjogadorA = rs.questionFloat("Digite um numero de 1 a 10:")
-    listadenumerosjogadorA.push(numerosjogadorA)
-}
-let listadenumerosjogadorB = []
-console.log("_____________________\n")
-console.log(NomeJogadorB, "é a sua vez!")
-for (let i = 0; i < numerodeperguntas; i++){
-    let numerosjogadorB = rs.questionFloat("Digite um numero de 1 a 10:")
-    listadenumerosjogadorB.push(numerosjogadorB)
-}
-
-console.log("_____________________\n")
-for(let i = 0; i < 5; i++) {
-      let condition = listadenumerosjogadorB.indexOf(listadenumerosjogadorA[i]) > -1;
-        if(condition) {
-           numerosiguais.push(listadenumerosjogadorA[i]);
+let rs = require('readline-sync')
+let tamanhoDasListas = 5
+let nomeJogador1 = rs.question('Digite o nome do jogador 1: ')
+let nomeJogador2 = rs.question('Digite o nome do jogador 2: ')
+console.clear()
+let listaJogador1 = []
+for (let i = 0; i < tamanhoDasListas; i++) {
+    let respostaJogador = -1
+    while (respostaJogador < 0 || respostaJogador > 10) {
+        respostaJogador = rs.questionInt(`Digite um número entre 0 e 10, ${nomeJogador1}: `)
     }
+    listaJogador1.push(respostaJogador)
 }
-console.log("Os numeros iguais entre "+ NomeJogadorA + " e " + NomeJogadorB + " são: " + numerosiguais); 
-console.log("_____________________")
+console.clear()
+let listaJogador2 = []
+for (let i = 0; i < tamanhoDasListas; i++) {
+    let respostaJogador = -1
+    while (respostaJogador < 0 || respostaJogador > 10) {
+        respostaJogador = rs.questionInt(`Digite um número entre 0 e 10, ${nomeJogador2}: `)
+    }
+    listaJogador2.push(respostaJogador)
+}
+console.clear()                                      
+let numerosRepetidos = []
+for(let i = 0; i < tamanhoDasListas; i++) {    
+    let itemLista1 = listaJogador1[i]
+    for(let j = 0; j < tamanhoDasListas; j++) {
+        let itemLista2 = listaJogador2[j]
+        let achouNumeroRepetido = itemLista1 === itemLista2
+        if (achouNumeroRepetido) {
+            let numeroNaoEstaInclusoNaLista = !numerosRepetidos.includes(itemLista1)
+            if (numeroNaoEstaInclusoNaLista) {
+                numerosRepetidos.push(itemLista1)
+            }
+        }
+    }                                                   
+}        
+console.log('Estes são os número repetidos: ', numerosRepetidos.join(', '))
 

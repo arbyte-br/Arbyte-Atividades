@@ -27,6 +27,7 @@ for(let i = 0; i < tamanhoDasListas; i++) {
            
         if (listaJogador2.includes(itemLista1)) {
             itemLista1
+            
             }else {
                 numerosDiferentes.push(itemLista1)
         }
