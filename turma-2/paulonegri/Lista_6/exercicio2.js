@@ -47,4 +47,4 @@ let itensA = respostasJogadorA[i]
 
     }
 }
-console.log(`Estes são os número repetidos: ${numerosRepetidos.join(', ')}`)
+console.log(`Estes são os número que aparecem apenas na lista ${jogadorA}: ${numerosRepetidos.join(', ')}`)
