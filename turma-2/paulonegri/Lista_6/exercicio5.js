@@ -3,7 +3,7 @@
 
 let rs = require('readline-sync')
 let palavra = rs.question('Digite um nome: ')
-let terceiraLetra = []
 
-terceiraLetra.push(palavra.charAt(2))
-console.log(`Essa é a terceira letra do nome informado: ${terceiraLetra} `)
+
+
+console.log(`Essa é a terceira letra do nome informado: ${palavra.charAt(2)} `)
