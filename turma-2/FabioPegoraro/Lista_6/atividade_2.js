@@ -24,12 +24,11 @@ for (let i = 0; i < tamanhoDasListas; i++) {
 let numerosDiferentes = []
 for(let i = 0; i < tamanhoDasListas; i++) {    
     let itemLista1 = listaJogador1[i]
-           
+                
         if (listaJogador2.includes(itemLista1)) {
-            itemLista1
-            
-            }else {
-                numerosDiferentes.push(itemLista1)
+           itemLista1
+           }else {
+            numerosDiferentes.push(itemLista1)
         }
     }                                                   
        
