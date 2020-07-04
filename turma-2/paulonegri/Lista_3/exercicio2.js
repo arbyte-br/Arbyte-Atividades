@@ -11,7 +11,7 @@ resul=0
 
 while(contador<numero1){
     contador++
-    resul = resul + numero2
+    resul = contador + numero2
 }
 
 console.log("sua resposta é " + resul)
