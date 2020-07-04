@@ -15,6 +15,6 @@ if(sexo == 1){
    peso = ((altura * 72.7) - 58)
    console.log(`Seu peso sugerido é ${peso}`)
 }else{
-    peso = ((altura * 69.1) - 44.7) 
+    peso = ((altura * 62.1) - 44.7) 
     console.log(`Seu peso sugerido é ${peso}`)
 }
