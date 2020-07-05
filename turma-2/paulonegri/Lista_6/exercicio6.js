@@ -8,12 +8,12 @@ let palavra = rs.question(`Digite uma palavra aqui: `)
 
 palavra.endsWith('al') ? console.log(`Palavra identificada -> ${palavra}`) 
 : console.log(`palavra não identificada`)
-console.clear()
 
-let i =rs.question(`Gostaria de tentar novamente?(Responda com sim ou nao)`).toLowerCase()
+
+let i = rs.question(`Gostaria de tentar novamente?(Responda com sim ou nao)`).toLowerCase()
 for(i; i !== 'nao'; null){
     palavra = rs.question(`Digite uma palavra aqui: `)
     palavra.endsWith('al') ? console.log(`Palavra identificada -> ${palavra}`) 
     : console.log(`palavra não identificada`)
-    i =rs.question(`Gostaria de tentar novamente?(Responda com sim ou nao)`).toLowerCase()
+    i = rs.question(`Gostaria de tentar novamente?(Responda com sim ou nao)`).toLowerCase()
 }
