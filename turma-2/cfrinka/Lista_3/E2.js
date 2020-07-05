@@ -1,11 +1,17 @@
 let readlineSync = require('readline-sync')
-let numero1 = readlineSync.questionInt('Digite um número ')
-let numero2 = readlineSync.questionInt('Digite outro numero ')
+console.log('Vamos fazer a multiplacação de dois fatoers')
+let numero1 = readlineSync.questionInt('Digite um dos fatores ')
+let numero2 = readlineSync.questionInt('Digite o outro fator ')
+let contador = 0
+let resultado = 0
 
-while(numero2 > 0) {
-    let res = numero1 + numero1
-    console.log(res)
-    numero2--
-    break;
+if (numero1 > 0 && numero2 > 0) {
+    while (contador < numero1) {
+        resultado += numero2;
+        contador++;
+    }
+    console.log(resultado)
+    console.log('=============')
+}else {
+    console.log('Um ou mais dos fatores não é positivo')
 }
-console.log('=============')
