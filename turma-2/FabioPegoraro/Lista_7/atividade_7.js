@@ -14,4 +14,4 @@ function detectarnumero(){
         console.log ("Nenhum jogador acertou")
     }
 }
-let resultado = detectarnumero ()
+let resultado = detectarnumero (n1, n2)
