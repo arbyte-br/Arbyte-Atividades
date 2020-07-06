@@ -1,9 +1,13 @@
 let rs = require('readline-sync');
 
-let palavra = rs.question('Digite uma palavra');
+let palavra = rs.question('Digite uma palavra ');
 
 
-let sub = palavra.endsWith('al', `${palavra}`);
+let sub = palavra.endsWith('al', `${palavra.length}`);
 
-console.log(sub);
+if(sub == true){
+    console.log(palavra);
+}
+
+else { console.log('palavra nao identificada')}
 
