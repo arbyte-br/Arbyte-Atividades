@@ -1,20 +1,25 @@
 let rs = require('readline-sync');
 
-let palavra = rs.question('Digite uma palavra ');
+let palavra = rs.question("Digite aqui uma palavra: \n");
+let totalvogal = 0;
+let totalconsoante = 0;
 
-let vogais = ['a', 'e', 'i' , 'o', 'u'];
-let consoantes = ['b','c','d','f','g','h','j','l','m','n','p','q','r','s','t','u','v','x','z','w','y','k'];
-let total_consoantes = 0;
-let  total_vogais = 0;
-
-
-let NumeroLetras = palavra.length;
-for (i = 0; i < palavra.length; i++) {
-    if(vogais.indexOf(palavra[i]) >= 0)
-    total_vogais++;
-else if(consoantes.indexOf(palavra[i]) >= 0)
-    total_consoantes++;
-
+for(let i=0; i < palavra.length; i++) 
+{
+    if(palavra.charAt(i) == 'a' ||palavra.charAt(i) == 'e' ||palavra.charAt(i) == 'i' || palavra.charAt(i) =='o' ||palavra.charAt(i) == 'u')
+    {
+        
+        totalvogal = totalvogal +1;
+    } 
+    else
+    {
+        
+        totalconsoante = totalconsoante+1;
+    }
 }
+
+console.log(`${totalvogal} vogais`);
+console.log(`${totalconsoante} consoantes`);
+
 
 
