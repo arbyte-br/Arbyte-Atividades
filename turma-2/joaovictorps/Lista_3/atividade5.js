@@ -1,8 +1,4 @@
 let rs = require('readline-sync')
 
-let pergunta1 = rs.question('Insira 0 para sair ou qualquer outra tecla para continuar. \n')
-
- while(pergunta1 !== 0) {
-   pergunta1 = rs.question('Insira 0 para sair ou qualquer outra coisa para continuar.')
-    
- }
+for(let pergunta = rs.question('Insira 0 para sair ou qualquer outra coisa para continuar.'); pergunta !== 0; pergunta = rs.question('Insira 0 para encerrar ou qualquer outra coisa para continuar.')) {
+}
