@@ -1,7 +1,8 @@
-let numero = 1
-let resultado = 0
+let limite = 100
 
-while(numero < 100) {
-    console.log(numero)
-    numero = numero + 2
+for(let contador = 1; contador < limite; contador++) {
+    if (contador%2 !== 0) {
+        console.log(contador)
+    }
 }
+
