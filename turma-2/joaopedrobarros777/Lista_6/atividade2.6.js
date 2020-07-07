@@ -10,14 +10,14 @@ let listajogador2 = []
 
 let numerosNaoRepetidos = []
 
-let numjogador1 = 4
+let numjogador1 = 5
 
 for(let i = 0; i <= numjogador1; i++){
     let respostajogador1 = rs.questionInt("Jogador 1, digite 1 numero de 1 a 10\n")
     listajogador1.push(respostajogador1)
 }
 
-let numjogador2 = 4
+let numjogador2 = 5
 
 for(let i = 0; i <= numjogador2; i++){
     let respostajogador2 = rs.questionInt("Jogador 2, digite 1 numero de 1 a 10\n")
@@ -27,11 +27,9 @@ for(let i = 0; i <= numjogador2; i++){
 console.log(jogador1 + " " + listajogador1)
 console.log(jogador2 + " " + listajogador2)
 
-for(let i = 0; i <= listajogador1.length; i++){
-    for(let j = 0; j <= listajogador2.length; j++){
-        if (listajogador1[i] != listajogador2[j]){
-            numerosNaoRepetidos.push(listajogador1[i])
-        }
+for(let i = 0; i < listajogador1.length; i++){
+    if(!listajogador2.includes(listajogador1[i])){
+        numerosNaoRepetidos.push(listajogador1[i])
     }
 }
 console.log(numerosNaoRepetidos)
