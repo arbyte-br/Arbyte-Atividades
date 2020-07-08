@@ -6,7 +6,7 @@ let rs = require('readline-sync')
 
 let anoNascimento = rs.questionInt('Digite o ano do seu nascimento: ')
 
-if (anoNascimento > 2002 ) {
+if (anoNascimento > 2004 ) {
     console.log('Você ainda não poderá votar nas eleições desse ano.')
 }   
     else {
