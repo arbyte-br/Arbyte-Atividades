@@ -4,7 +4,7 @@
 //Dica: Neste exercício você pode precisar de ajuda do operador MÓDULO (%). 
 //Você também pode precisar criar mais de um loop. 
  
-//descobrindo se o numero PRIMO
+//descobrindo se o numero é PRIMO
 function ehPrimo(numero) {
     let contador = 2
     let achouDivisorAlemDeleMesmoEUm = false

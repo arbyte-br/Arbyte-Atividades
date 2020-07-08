@@ -6,9 +6,18 @@
 //Dica: Neste exercício vocês talvez precisem fazer uso do recurso “user.questionInt()” que transforma o conteúdo de um input do usuário de string para inteiro. OK
 
 let rs = require("readline-sync")
-// Pedindo numeros p/ usuario
-let n1 = rs.questionInt("Digite um numero de 1 a 100:")
-let n2 = rs.questionInt("Digite outro numero 1 a 100:")
+// Pedindo numeros p/ usuario e confirmando se está entre 1 e 100
+
+let n1 = rs.questionInt("Digite um numero entre 1 a 100:")
+while (n1 < 1 || n1 > 100) {
+    n1 = rs.questionInt("Digite um número entre 1 e 100:" )
+}
+
+let n2 = rs.questionInt("Digite outro numero entre 1 a 100:")
+while (n2 < 1 || n2 > 100) {
+    n2 = rs.questionInt("Digite um número entre 1 e 100:" )
+}
+
 //==========================
 // Vendo qual o numero é menor e maior
 if (n1 < n2){
