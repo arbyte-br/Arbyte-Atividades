@@ -1,4 +1,4 @@
-let lista = [12,28,10,20,21]
+let lista = [12,28]
 function detectaMaior(listaDeNumeros) {
     for(let i = 0; i < listaDeNumeros.length; i++) {
         let numeroSendoAvaliado = listaDeNumeros[i]
