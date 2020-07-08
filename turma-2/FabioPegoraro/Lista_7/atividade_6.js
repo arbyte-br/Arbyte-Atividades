@@ -12,5 +12,3 @@ function detectarnumero(){
         console.log ("O número deve ser de 1 a 10!")
     }
 }
-
-let resultado = detectarnumero ()
