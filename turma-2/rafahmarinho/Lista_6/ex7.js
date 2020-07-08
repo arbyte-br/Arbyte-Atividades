@@ -25,3 +25,4 @@ deuErro ? console.log('A palavra está escrita de forma errada, antes de "P" e "
 // } else {
 //     console.log('TA CERTO')
 // }
+
