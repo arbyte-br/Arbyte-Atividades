@@ -1,33 +1,27 @@
 let rs = require('readline-sync');
 
-let player1 = rs.question('Player 1 - Qual é o seu nome? ');
-let player2 = rs.question('Player 2 - Qual é o seu nome? ');
-let p1 = new Array();
-let p2 = new Array();
-let result = new Array();
-let i = 0;
+let jogador1 = rs.question('Insira o nome do jogador 1? ');
+let jogador2 = rs.question('Insira o nome do jogador 2? ')
+let array1 = [];
+let array2 = [];
 
-for (i; i < 5; i++) {
-    p1[i] = rs.question(`${player1} Digite um numero: `);
+for (i = 0; i < 5; i++) {
+    let numero = rs.questionInt(`Por favor ${jogador1}, insira um numero: `);
+    array1.push(numero);
 }
 
 for (i = 0; i < 5; i++) {
-    p2[i] = rs.question(`${player2} Digite um numero: `);
+    let numero = rs.questionInt(`Por favor ${jogador2}, insira um numero: `);
+    array2.push(numero);
 }
 
-// Ate aqui funciona
-
-for(i = 0; i < 10; i++)
-{
-    let num = p2.indexOf(p1[i]) >= -1;
-    if(num)
-    {
-        result = `${result}${p1[i]}`;
+for (i = 0; i < 5; i++) {
+    let elemento = array1[i];
+    if (array2.includes(elemento))  {
     }
-    
+     else { 
+         array2.push(elemento);
+     }
 }
 
-// debugg correto
-console.log(`${p1}  ${player1}`);
-console.log(`${p2}  ${player2}`);
-console.log(`${result}`);
+console.log(`Os números inseridos foram: ${array2.join(',')}`)
