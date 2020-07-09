@@ -17,8 +17,16 @@ let autenticar = {
     senha: '12345678'
 }
 
-if (userLogin === autenticar.login && senhaLogin === autenticar.senha){
+if (userLogin === autenticar.login && senhaLogin === autenticar.senha) {
     console.log('BEM VINDO AO SISTEMA')
-} else{
+} else {
     console.log('FALHA NO LOGIN ! USUARIO OU SENHA INCORRETOS.')
+
+    let userTentandoLogar = {
+        login: userLogin,
+        senha: senhaLogin
+    }
+
+    console.log(userTentandoLogar)
 }
+
