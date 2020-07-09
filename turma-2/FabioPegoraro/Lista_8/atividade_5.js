@@ -3,7 +3,7 @@
 
 let rs = require("readline-sync")
 
-let nome = rs.question("Qual o seu nome?\n")
+let nome = rs.question("Qual é o seu nome?\n")
 let n1 = rs.question("Digite um nuemro?")
 let n2 = rs.question("Digite um nuemro?")
 let n3 = rs.question("Digite um nuemro?")
