@@ -1,50 +1,58 @@
-let rs = require('readline-sync')
-let tamanhoDasListas = 5
-let nomeJogador1 = rs.question('Digite o nome do jogador 1: ')
-let nomeJogador2 = rs.question('Digite o nome do jogador 2: ')
+let rs = require ('readline-sync')
+ 
+ 
+ let listaTamanho = 5
+ 
+ let listaPlayerA = []
+ let listaPlayerB = []
 
+ let playerA = rs.question ('=============== PLAYER 1 ===============\n')
+ 
+ console.log (`=============== ${playerA}, digite um número de 0 a 10 ===============`)
+ 
+ for (let i = 1; i <= listaTamanho; i++){
 
-console.clear()
+    let respostaPlayerA = rs.questionInt(`Número ${i} : `)
 
-
-let listaJogador1 = []
-for (let i = 0; i < tamanhoDasListas; i++) {
-    let respostaJogador = -1
-    while (respostaJogador < 0 || respostaJogador > 10) {
-        respostaJogador = rs.questionInt(`Digite um número entre 0 e 10, ${nomeJogador1}: `)
+         if (respostaPlayerA > 0 && respostaPlayerA <= 10){
+          listaPlayerA.push(respostaPlayerA)
+         } else{
+             console.log ('Número não é entre 1 e 10.')
+             i--
+         }
+ 
     }
-    listaJogador1.push(respostaJogador)
-}
+   
+   
+let playerB = rs.question ('=============== PLAYER 2 ===============\n')
 
+console.log (`=============== ${playerB}, digite um número de 0 a 10 ===============`)
 
-console.clear()
+ for (let i = 1; i <= listaTamanho; i++){
 
+    let respostaPlayerB = rs.questionInt(`Número ${i} : `)
 
-let listaJogador2 = []
-for (let i = 0; i < tamanhoDasListas; i++) {
-    let respostaJogador = -1
-    while (respostaJogador < 0 || respostaJogador > 10) {
-        respostaJogador = rs.questionInt(`Digite um número entre 0 e 10, ${nomeJogador2}: `)
-    }
-    listaJogador2.push(respostaJogador)
-}
-
-
-console.clear()   
-
-
-let numerosRepetidos = []
-for(let i = 0; i < tamanhoDasListas; i++) {    
-    let itemLista1 = listaJogador1[i]
-    for(let j = 0; j < tamanhoDasListas; j++) {
-        let itemLista2 = listaJogador2[j]
-        let achouNumeroRepetido = itemLista1 === itemLista2
-        if (achouNumeroRepetido) {
-            let numeroNaoEstaInclusoNaLista = !numerosRepetidos.includes(itemLista1)
-            if (numeroNaoEstaInclusoNaLista) {
-                numerosRepetidos.push(itemLista1)
-            }
+        if (respostaPlayerB > 0 && respostaPlayerB <= 10){
+            listaPlayerB.push(respostaPlayerB)
+        } else{
+            console.log ('Número não é entre 1 e 10.')
+            i--
         }
-    }                                                   
-}        
-console.log('Estes são os número repetidos: ', numerosRepetidos.join(', '))
+ }
+ 
+ let numerosDiferentes = []
+ 
+ console.log (` ${playerA} digitou: ${listaPlayerA} || ${playerB} digitou : ${listaPlayerB}`)
+ 
+ for (let i = 0; i < listaPlayerA.length; i++){
+
+      if  (!listaPlayerB.includes(listaPlayerA[i])){
+         numerosDiferentes.push(listaPlayerA[i])
+      }
+ }
+
+
+ console.log(`Os números que ${playerA} colocou de diferente de ${playerB} são: ${numerosDiferentes}.`)
+
+
+

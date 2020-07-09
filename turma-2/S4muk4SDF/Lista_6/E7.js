@@ -3,30 +3,14 @@ let rs = require("readline-sync")
 
 let palavra = rs.question("Digite uma palavra: ")
 
-let caracteresTotais = palavra.length
+if (palavra.includes("np")) {
 
+    console.log("A palavra está errada.")
 
-for (let posicao = 0; posicao < caracteresTotais; posicao++) {
+} else if (palavra.includes("nb")) {
 
-    let caracterAtual = palavra.charAt(posicao)
+    console.log("A palavra está errada.")
 
-    if (palavra.includes("p")) {
-        posicao--
-
-            if (caracterAtual === "m") {
-                console.log("A palavra esta correta.")
-            } else if (caracterAtual === "n") {
-                console.log("A palavra esta incorreta.")
-            }
-
-    } else if (palavra.includes("b")) {
-        posicao--
-
-            if(caracterAtual === "m") {
-                console.log("A palavra esta correta.")
-            } else if (caracterAtual === "n") {
-                console.log("A palavra esta incorreta.")
-            }
-
-    }
+} else {
+    console.log("A palavra está certa.")
 }
