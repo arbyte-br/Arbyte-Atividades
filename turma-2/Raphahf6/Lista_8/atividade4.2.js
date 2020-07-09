@@ -18,7 +18,7 @@ let autenticar = {
 }
 
 if (userLogin === autenticar.login && senhaLogin === autenticar.senha) {
-    console.log('BEM VINDO AO SISTEMA')
+    console.log('BEM VINDO AO SISTEMA !')
 } else {
     console.log('FALHA NO LOGIN ! USUARIO OU SENHA INCORRETOS.')
 
