@@ -1,36 +1,54 @@
-let rs = require("readline-sync")
+let rs = require ('readline-sync')
 
-let numeroRepeticoes = 5
+ let playerA = rs.question ('=============== PLAYER 1 ===============\n')
+ let playerB = rs.question ('=============== PLAYER 2 ===============\n')
+ 
+ let listaTamanho = 5
+ 
+ let listaPlayerA = []
+ let listaPlayerB = []
+ 
+ console.log (`=============== ${playerA}, digite um número de 0 a 10 ===============`)
+ 
+ for (let i = 1; i <= listaTamanho; i++){
 
-let numeroPlayerA = []
+     let respostaPlayerA = rs.questionInt(`Número ${i} : `)
 
-let numeroPlayerB = []
-
-let resultadoFinal = ""
-
-let player1 = rs.question("Escolha o primeiro jogador: ")
-
-    console.log("=====================================")
-
-for (let i = 0; i < numeroRepeticoes; i++) {
-    
-    let numeros1 = rs.questionInt("Escolha um número de 1 a 10 (Faça isso 5 vezes, sem repetir os números): ")
-
-    numeroPlayerA.push(numeros1)
+        if (respostaPlayerA > 0 && respostaPlayerA <= 10){
+            listaPlayerA.push(respostaPlayerA)
+        }else{
+            console.log ('Número não é entre 1 e 10.')
+            i--
+        }
+ 
 }
+ 
+ console.log (`=============== ${playerB}, digite um número de 0 a 10 ===============`)
 
-    console.log("=====================================")
+ for (let i = 1; i <= listaTamanho; i++){
 
-let player2 = rs.question("Escolha o segundo jogador: ")
+     let respostaPlayerB = rs.questionInt(`Número ${i} : `)
 
-for (let i = 0; i < numeroRepeticoes; i++) {
-    
-    let numeros2 = rs.questionInt("Escolha um número de 1 a 10 (Faça isso 5 vezes, sem repetir os números): ")
+        if (respostaPlayerB > 0 && respostaPlayerB <= 10){
+            listaPlayerB.push(respostaPlayerB)
+        }else{
+            console.log ('Número não é entre 1 e 10.')
+            i--
+        }
+ }
+ 
+ console.log (` ${playerA} digitou: ${listaPlayerA} || ${playerB} digitou : ${listaPlayerB}`)
 
-    numeroPlayerB.push(numeros2)
-}
+ let numeros = []
 
-if (numeroPlayerA.includes(numeroPlayerB)) {
+ let ordem = numeros.sort()
+ 
+ for (let i = 0; i < listaPlayerA.length; i++ ){
+     numeros.push(listaPlayerA[i])
 
-    console.log("a")
-}
+     if (!listaPlayerA.includes(listaPlayerB[i])){
+         numeros.push(listaPlayerB[i])
+      }
+ }
+
+ console.log (`Os números inseridos foram ${numeros.sort().join(',')}.`)

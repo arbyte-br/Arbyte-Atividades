@@ -12,7 +12,11 @@ let numeros = "123456789"
 
 let vogaisContagem = []
 
+let totalVogais = vogaisContagem.length
+
 let consoantesContagem = []
+
+let totalConsoantes = consoantesContagem.length
 
 
 let totalCaracteres = palavra.length
@@ -31,8 +35,8 @@ for (let posicao = 0; posicao < totalCaracteres; posicao++) {
     }
 }
 
-console.log("Vogais: " + vogaisContagem)
+console.log("Vogais: " + totalVogais)
 
-console.log("Consoantes: " + consoantesContagem)
+console.log("Consoantes: " + totalConsoantes)
 
 console.log("=============================================")
