@@ -1,0 +1,22 @@
+{
+  "name": "MODULES_L9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "E1.js",
+  "dependencies": {
+    "age-calculator": "^1.0.0",
+    "chalk": "^4.1.0",
+    "fasam-imc-calc": "^0.0.4",
+    "is-odd": "^3.0.1",
+    "median": "^0.0.2",
+    "prime-number": "^1.0.2",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
