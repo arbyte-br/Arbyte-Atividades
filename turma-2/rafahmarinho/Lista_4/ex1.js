@@ -20,7 +20,7 @@ if(valor1 < valor2){
             console.log(`${valor1} PING`)
         } else if (valor1 % 5 == 0){
             console.log (`${valor1} PONG`)
-        } else{
+        } else{ 
             console.log(valor1)
         }
         valor1++

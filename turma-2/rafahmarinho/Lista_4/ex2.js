@@ -33,7 +33,7 @@ while (i <= limite){
         }else{
             console.log(i, 'PAR')
         }
-    }else if (primo){
+    }else if (primo && i != 1){
         console.log(i, 'ÍMPAR PRIMO')
     }else{
         console.log(i, 'ÍMPAR')

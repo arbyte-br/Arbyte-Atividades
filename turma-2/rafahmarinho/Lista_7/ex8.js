@@ -5,24 +5,25 @@
 
 let rs = require ('readline-sync')
 
+let numCerto = 35
 let n1 = rs.questionInt('Digite um número: ')
 let n2 = rs.questionInt('Digite outro número: ')
 
 function numeroDaSorte(n1, n2) {
-    if (n1 == 35 && n2 == 35) {
+    if (n1 == numCerto && n2 == numCerto) {
         console.log ('Ambos números estão corretos!') 
-    } else if (n1 == 35) {
+    } else if (n1 == numCerto) {
         console.log ('O primeiro número está correto!') 
-    } else if (n2 == 35) {
+    } else if (n2 == numCerto) {
         console.log ('O segundo número está correto!') 
     }else {
-        console.log('Você errou o número.')
+        console.log('Vocês erraram o número.')
     }
 }  
 numeroDaSorte(n1, n2)
 
-let comparaN1 = n1 - 35
-let comparaN2 = n2 - 35
+let comparaN1 = Math.abs(n1 - 35)
+let comparaN2 = Math.abs(n2 - 35)
 
 function comparativo(comparaN1,comparaN2) {
 if (comparaN1 < comparaN2) {
