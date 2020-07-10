@@ -15,7 +15,7 @@ let anoNascimento = rs.questionInt('Digite o ano do seu nascimento: ')
 
 let anoAtual = 2020
 let mesAtual = 07
-let dataNascimento = [`${diaNascimento}/${mesNascimento}/${anoNascimento}`]
+let dataNascimento = `${diaNascimento}/${mesNascimento}/${anoNascimento}`
 
 let idade = anoAtual - anoNascimento
 
@@ -31,4 +31,3 @@ let user = {
 }
 
 console.log(user)
-

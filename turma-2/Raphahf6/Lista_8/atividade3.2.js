@@ -22,8 +22,8 @@ let anoNascimento2 = rs.questionInt(`${userName2} digite o ano do seu nascimento
 
 let anoAtual = 2020
 let mesAtual = 07
-let dataNascimento1 = [`${diaNascimento1}/${mesNascimento1}/${anoNascimento1}`]
-let dataNascimento2 = [`${diaNascimento2}/${mesNascimento2}/${anoNascimento2}`]
+let dataNascimento1 = `${diaNascimento1}/${mesNascimento1}/${anoNascimento1}`
+let dataNascimento2 = `${diaNascimento2}/${mesNascimento2}/${anoNascimento2}`
 
 
 let idade1 = anoAtual - anoNascimento1
