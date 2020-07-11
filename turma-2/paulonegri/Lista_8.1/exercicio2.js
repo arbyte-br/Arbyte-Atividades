@@ -10,15 +10,19 @@ nascimento e a sua idade devem ser propriedades deste objeto..*/
 
 let rs = require(`readline-sync`)
 let usuario = {}
+
 usuario.nome = rs.question(`Informe seu nome: `)
-usuario.diaNascimento = rs.questionInt(`Informe o dia do seu nascimento: `)
-usuario.mesNascimento = rs.questionInt(`Informe o mes do seu nascimento: `)
-usuario.anoNascimento = rs.questionInt(`Informe o ano do seu nascimento: `)
+usuario.dataNascimento = rs.question(`Informe sua data de nascimento(DD/MM/AAAA): `)
+usuario.diaNascimento = parseInt(usuario.dataNascimento.slice(0,2))
+usuario.mesNascimento = parseInt(usuario.dataNascimento.slice(3,5))
+usuario.anoNascimento = parseInt(usuario.dataNascimento.slice(6,10))
 usuario.idade 
+
 let dia = rs.questionInt(`Informe em que dia estamos: `)
 let mes = rs.questionInt(`Informe em que mes estamos: `)
 let ano = rs.questionInt(`Informe em que ano estamos: `)
-idade = 0
+let idade = 0
+
 for(i = usuario.anoNascimento +1; i <= ano; i++){
     if(ano == i){
         if(mes > usuario.mesNascimento){
@@ -35,3 +39,5 @@ for(i = usuario.anoNascimento +1; i <= ano; i++){
 console.clear()
 usuario.idade = idade
 console.log(`${usuario.nome} você tem ${usuario.idade} anos.`)
+
+//pedir em dd/mm/aaaa e validar isso!!
