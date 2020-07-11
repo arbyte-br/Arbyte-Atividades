@@ -40,4 +40,3 @@ console.clear()
 usuario.idade = idade
 console.log(`${usuario.nome} você tem ${usuario.idade} anos.`)
 
-//pedir em dd/mm/aaaa e validar isso!!
