@@ -1,24 +1,23 @@
 var rs = require('readline-sync');
 
-var frase = new Array ();
+var frase = rs.question("Por favor informe uma frase a ser convertida! \n");
 
-var pergunta = rs.question("Por favor informe uma frase a ser convertida! \n");
 
-frase.push(pergunta)
 
 palavraChave = "bosta";
 palavraCensurada = "estrume";
 var vazio = ""
 
-while(pergunta == vazio){
+while(frase == vazio){
     console.log("Por favor, insira um texto!");
-    pergunta = rs.question("Por favor informe uma frase a ser convertida! \n"); // como chamar a variavel sem ter que escrever tudo de novo?
-    if(pergunta == !vazio){
+    frase = rs.question("Por favor informe uma frase a ser convertida! \n"); // como chamar a variavel sem ter que escrever tudo de novo?
+    if(frase == !vazio){
         break;
     }
 }
 
-frase.toString.replace(palavraChave);
+resultado = frase.replace(palavraChave, palavraCensurada)
+console.log(`A frase convertida fica como: ( ${resultado} )`)
 
 
 
