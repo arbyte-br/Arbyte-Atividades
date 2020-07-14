@@ -1,14 +1,14 @@
 let rs = require('readline-sync')
 
-let pergunta = rs.question('Digite uma palavra: ')
-let perguntaModificada = ""
+let palavra = rs.question('Digite uma palavra: ')
+let palavraModificada = ""
 
-for(let contador = 0; contador < pergunta.length;contador++) {
-    let letraAtual = pergunta.charAt(contador).toLowerCase();
+for(let contador = 0; contador < palavra.length;contador++) {
+    let letraAtual = palavra.charAt(contador).toLowerCase();
     if ( letraAtual === "a" || letraAtual === 'e' || letraAtual ==='i' || letraAtual ==='o' || letraAtual === 'u') {
-        perguntaModificada+= letraAtual.toUpperCase();
+        palavraModificada+= letraAtual.toUpperCase();
     } else {
-        perguntaModificada+= letraAtual;
+        palavraModificada+= letraAtual;
     }
 }
-console.log(perguntaModificada)
+console.log(palavraModificada)
