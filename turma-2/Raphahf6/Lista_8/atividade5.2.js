@@ -1,16 +1,16 @@
 let rs = require('readline-sync')
 
+console.log('Crie o seu login')
+let login = rs.question('Digite o seu login: ')
+let senha = rs.question('Defina a sua senha: ')
+
+
+
 let userLogin = rs.question('Digite o seu login: ')
 let senhaLogin = rs.question('Digite a sua senha: ')
 
-let autenticar = {
-    login: 'raphaellima6',
-    senha: '12345678'
-}
 
-
-
-if (userLogin === autenticar.login && senhaLogin === autenticar.senha) {
+if (userLogin == login && senhaLogin == senha) {
     console.log('BEM VINDO AO SISTEMA !')
 
     let computador = {
@@ -54,31 +54,6 @@ if (userLogin === autenticar.login && senhaLogin === autenticar.senha) {
         
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 else {
     console.log('FALHA NO LOGIN ! USUARIO OU SENHA INCORRETOS.')
 
