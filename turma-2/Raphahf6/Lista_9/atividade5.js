@@ -16,4 +16,4 @@ let mesNascimento = dataCompleta.split('/')[1] - 1
 
 let idade = new AgeFromDate(new Date(anoNascimento, mesNascimento, diaNascimento)).age
 
-console.log(chalk.bold.blueBright(`Você tem ${idade} anos de idade`))
+console.log(chalk.bold.greenBright(`Você tem ${idade} anos de idade`))
