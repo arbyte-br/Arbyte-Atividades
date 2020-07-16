@@ -2,11 +2,11 @@ let rs = require('readline-sync')
 const isOdd = require('is-odd')
 
 function parImpar() {
-    let numero = rs.questionInt('Digite um numero: ')
+    let numero = rs.questionInt('Digite um numero para saber se é PAR ou IMPAR: ')
     if(isOdd(numero)) {
-        return "IMPAR"
+        return `${numero} É IMPAR.`
     } else {
-        return "PAR"
+        return `${numero} É PAR.`
     }
 }
 
