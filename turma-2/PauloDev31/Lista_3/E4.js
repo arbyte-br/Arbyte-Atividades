@@ -9,4 +9,3 @@ while(contador <= entradaUsuario){
         console.log(contador)
     }
     contador++
-}

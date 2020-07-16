@@ -1,4 +1,4 @@
-  
+
 let contador = 1
 let limite = 100
 
@@ -9,4 +9,3 @@ while(contador <= limite){
         console.log(contador)
     }
     contador++
-}

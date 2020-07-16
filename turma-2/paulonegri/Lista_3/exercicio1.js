@@ -7,7 +7,7 @@ let bip = rs.questionInt("Digite o numero de BIP BIP que gostaria que fosse exib
 console.log("##############################################")
 let contador = 0
 
-while(contador < bip) {
+while(contador <= bip) {
    console.log("BIP BIP")
     contador++
     

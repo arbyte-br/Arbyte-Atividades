@@ -1,13 +1,11 @@
-let rs = require("readline-sync")
+let contador = 1
+let repeticoes = 100
 
-let numero1 = rs.questionInt("Digite um numero?\n")
 
-let contador = 0
-let repeticoes = numero1
 
-console.log ("==============================")
-while (contador <= repeticoes) {
+for(let contador = 0; contador <= repeticoes; contador ++){
+    if (contador % 2 === 0){
+        
     console.log (contador)
-    contador = contador + 2
+    }
 }
-console.log ("==============================")

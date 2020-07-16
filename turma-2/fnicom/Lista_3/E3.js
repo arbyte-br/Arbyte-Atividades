@@ -1,11 +1,9 @@
-#include <stdio.h>
+let rs = require("readline-sync")
 
-main () {
-    int i,num;
+    let cont1 = 1
+    let repete = 100
 
-    for (int i= 1;i<= 100,i++;)
-    {
-       num= i%2;
-    if (num%2 ==0)     printf ("Numero par: %d",i);
-      }
-}
+    while (cont1 <= repete) {
+        console.log("Número Impar " + cont1)
+        cont1 = cont1 + 2
+    }
