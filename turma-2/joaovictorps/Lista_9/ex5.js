@@ -2,15 +2,29 @@ let rs = require('readline-sync')
 var ageCalculator = require('age-calculator');
 
 function dataNasc() {
-    let usuario = {
-        dia: rs.questionInt('Digite o dia que voce nasceu: '),
-        mes: rs.questionInt('Digite o mes que voce nasceu: '),
-        ano: rs.questionInt('Digite o ano que voce nasceu: ')
+    let nome = rs.question('Qual seu nome ?\n ')
+    let data = rs.question('Qual sua data de nascimento ? (Ex.: DD/MM/AAA) \n')
+
+    while(!data.includes('/')) {
+        console.log('Data inválida, tente novamente.')
+        data = rs.question('Qual sua data de nascimento ? (Ex.: DD/MM/AAA) \n')
     }
-    let idade = new ageCalculator.AgeFromDate(new Date(usuario.ano, usuario.mes, usuario.dia)).age
-    return idade
+    data = data.split('/')
+    let usuario = {
+        nome,
+        dataNascimento: {
+            dia: data[0],
+            mes: data[1],
+            ano: data[2]
+        }
+    }
+    let idade = new ageCalculator.AgeFromDate(new Date(usuario.dataNascimento.ano, 
+        usuario.dataNascimento.mes, usuario.dataNascimento.dia)).age
+    return console.log(`${nome}, você tem ${idade}.`)
 }
 
-console.log(dataNasc())
+dataNasc()
+
+
 
 
