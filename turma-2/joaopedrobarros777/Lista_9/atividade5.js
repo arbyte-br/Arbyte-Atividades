@@ -1,7 +1,13 @@
-let rs = require("readline-sync")
+let rs = require('readline-sync')
 
-var ageCalculator = require('age-calculator')
+let {AgeFromDateString} = require('age-calculator')
 
-let dataNascimento = rs.question("Digite sua data de nascimento AAAA/MM/DD\n")
+let dataNasc = rs.question('Qual sua data de nascimento? (DD/MM/AAAA): ').split('/')  
 
+let diaUser = dataNasc[0]
+let mesUser = dataNasc[1]
+let anoUser = dataNasc[2]  
 
+let ageFromString = new AgeFromDateString(`${anoUser}-${mesUser}-${diaUser}`).age;
+  
+console.log(`Você tem ${ageFromString} anos.`)
