@@ -7,8 +7,6 @@ const usuario = {
     }
 }
 
-const {apelido, nomeCompleto:{nome}} = usuario
-
-
+const {apelido, nomeCompleto:{nome} } = usuario
 
 console.log(`Seu nome é ${nome} e apelido: ${apelido}`)

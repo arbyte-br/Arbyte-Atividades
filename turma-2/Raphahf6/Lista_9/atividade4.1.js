@@ -6,5 +6,3 @@ const e = '​ e ​ '
 let meuObj = {...obj, d, e}
 
 console.log(meuObj)
-
-
