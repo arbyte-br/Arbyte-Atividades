@@ -1,11 +1,19 @@
 let rs = require ('readline-sync');
 
-let num = rs.questionInt('Digite o primeiro numero de 1 a 100 ');
 
-i='*';
-let cont = 0;
-while (cont < num){
-    console.log (i);
-    
-    num = num - 1;
+
+console.log("\n");
+let linha = 1;
+while (linha < 8)
+{
+  console.log( "\t" );
+  let coluna = 1;
+  while (coluna < linha)
+  {
+    console.log( "*" );
+    coluna += 1;
+  }
+  console.log( "\n" );
+  linha += 1;
 }
+
