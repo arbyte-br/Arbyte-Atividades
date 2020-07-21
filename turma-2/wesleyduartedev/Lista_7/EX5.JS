@@ -5,22 +5,22 @@
 
 let rs=require('readline-sync');
 
-let numero1=rs.question('Insira um primeiro : ');
-let numero2=rs.question('Insira o segundo numero: ');
+let numero1=rs.question('Insira o numero 1 : ');
+let numero2=rs.question('Insira o numero 2 : ');
 
 
 
  function retornamenor (numero1,numero2) {
      if (numero1 < numero2){
-           console.log('Numero1 é menor: ' +numero1 );
+           console.log('Numero 1 é menor: ' +numero1 );
           }
            else if(numero2 < numero1) {
-            console.log('Numero2 é menor: ' +numero2 );
+            console.log('Numero 2 é menor: ' +numero2 );
            }
             else if (numero1 === numero2){
             console.log('Os dois numeros são iguais: '+ numero1+" e "+ numero2)
             }
-        return retornamenor; 
+        return retornamenor;
           
      }
 

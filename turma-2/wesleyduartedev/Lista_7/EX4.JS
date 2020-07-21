@@ -15,7 +15,7 @@ let numero1=rs.question('Insira o numero da tabuada: ');
 let multiplicador;
  function tabuada (numero1){
     console.log('Inicio de tabuada do ' +numero1+  '---------------------------');
-      while (tabela <=10){
+      while (tabela <=9){
           var resultado = numero1*tabela;
           console.log(numero1 + "x" +tabela+ "="+(resultado));
           tabela++;
