@@ -42,7 +42,8 @@ let comparacao =[]
               
              }
           
-          console.log(`Os numeros que os jogadores A e B colocaram sem repetir são :  ${comparacao} `);  
+          console.log(`Os numeros que os jogadores A e B colocaram sem repetir são :  ${comparacao.sort()} `);
+          
 
           //que apenas o jogador A e B colocou sem repetir nenhum número
           //EX: Jogador A : 1, 2, 3, 4, 5

@@ -39,8 +39,9 @@ let comparacao =[]
           console.log('numero de jogador B :',jogadorB );
    
           for (i = 0; i<9 ; i++){
-             if (jogadorA[i] === jogadorB[i]){
+             if (jogadorA[i] === jogadorB[i] || (jogadorB[i] === jogadorA[i])) {
                 comparacao.push(jogadorA[i]);
+         
              }
           }
           console.log(`Os numeros são iguais:  ${comparacao} `);
