@@ -23,23 +23,21 @@
 
    var palavra = readlineSync.question('Insira uma palavra:');
 
+    
+    let vogais =[ "a","e","i","o","u"];
+    let tamanhopalavra = palavra.length
+    let i = 0
+    let resultado = "";
+    
+    
+      for (i; i<tamanhopalavra ; i++){
+        let caracter =palavra[i];
+        let containvogal = vogais.indexOf(caracter) > -1;
 
-    
-    var tamanhopalavra = palavra.length
-    var i = 0
-    
-    
-         for ( i= 0 ;i <tamanhopalavra.length ; i = i + 1  ) {
-               if (palavra.charAt(i)  == 'a' || palavra.charAt(i) == 'e' ||  palavra.charAt(i) =='i' ||  palavra.charAt(i) == "o" ||  palavra.charAt(x) == "u ") {
-                   console.log( palavra.charAt(x).toUpperCase());
-                    
-               }
-                
-                 else 
-                        console.log(palavra.charAt(i));
-                        console.log(palavra);
+        resultado = `${resultado} ${containvogal ? caracter.toLocaleUpperCase() : caracter}`; 
 
-            }
+      }
+      console.log(resultado);
                     
                      
                    
@@ -57,5 +55,5 @@
          
          
    
-      
+;      
   

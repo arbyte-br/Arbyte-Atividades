@@ -8,32 +8,31 @@
     let fs = require("fs");
     let rs = require("readline-sync");
   
+  
 
    let carroJsonCaminho = 'carro.json';
    let bufferCarro = fs.readFileSync(carroJsonCaminho);
    let novoCarro = JSON.parse(bufferCarro);
- //let marca = rs.question('Insira a marca do carro: ');
- //let cor = rs. question('Insira a cor do carro: ');
- //let modelo = rs. question('Insira o modelo do carro: ');
+   let marca = rs.question('Insira a marca do novo carro: ');
+   let cor = rs. question('Insira a cor do novo carro: ');
+   let modelo = rs. question('Insira o modelo do novo carro: ');
+
+    //novoCarro.push(bufferCarro);
+  
  
 
- let carro = {
-     //mercaCarro: marca,
-     //corCarro: cor,
-    // modeloCarro: modelo,
-    marca: rs.question('Marca do carro: '),
-    cor: rs.question('Cor do carro: '),
-    modelo: rs.question('Modelo do carro: '),
+   novoCarro = {
+    mercaCarro: marca,
+    corCarro: cor,
+    modeloCarro: modelo,
 
-
+    
  };  
-    novoCarro.push(carro);
+
+   let carroString = JSON.stringify(novoCarro);
+   fs.writeFileSync(carroJsonCaminho,novoCarro);
   
+  console.log(carroString,novoCarro);
+  //console.log(bufferCarro);
 
-
-  let carroString = JSON.stringify(novoCarro);
-  fs.writeFileSync(carroJsonCaminho,carroString);
-  
-  console.log(carroString);
-
-
+ 
