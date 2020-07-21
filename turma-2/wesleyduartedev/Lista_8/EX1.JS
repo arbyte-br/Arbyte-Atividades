@@ -7,8 +7,8 @@
  let rs = require("readline-sync");
   
  let marca = rs.question('Insira a marca do carro: ');
- let cor = rs. question('Insira a cor do carro: )');
- let modelo = rs. question('Insira o modelo do carro: )');
+ let cor = rs. question('Insira a cor do carro: ');
+ let modelo = rs. question('Insira o modelo do carro: ');
 
  let carro = {
      mercaCarro: marca,

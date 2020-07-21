@@ -26,6 +26,4 @@
    
 
   console.log(carroString);
- //console.log(`A marca é: ${carro.mercaCarro}`);
- //console.log(`A cor do carro é: ${carro.corCarro}`);
- //console.log(`O modelo do carro é: ${carro.modeloCarro}`);
+ 
