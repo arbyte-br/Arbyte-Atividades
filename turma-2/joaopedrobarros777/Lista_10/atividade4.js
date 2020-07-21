@@ -20,8 +20,8 @@ class Carro {
     }
 }
 
-var carro1 = new carro()
-var carro2 = new carro()
+var carro1 = new Carro()
+var carro2 = new Carro()
 
 console.log(carro1)
 console.log(carro2)
