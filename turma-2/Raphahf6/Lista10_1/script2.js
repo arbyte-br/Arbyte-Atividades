@@ -10,9 +10,13 @@ class Motorista99 {
         this.cnh = cnh
         this.cpf = cpf
     }
+
+    getCpf(){
+        return (`CPF: ${this.cpf}`)
+    }
 }
 
 
 let novoMotorista = new Motorista99('09558749982', '28810703880')
 
-console.log(novoMotorista)
+console.log(novoMotorista.getCpf())
