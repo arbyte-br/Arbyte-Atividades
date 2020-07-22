@@ -25,8 +25,8 @@
 let rs = require('readline-sync')
 
 let login = {
-    user: '',
-    pass: '',
+    user: null,
+    pass: null,
 }
 console.log('========= CRIANDO SUA CONTA =========')
 login.user = rs.question ('Digite um nome de úsuario: ')
@@ -40,38 +40,32 @@ let pass = rs.question('Senha: ')
 
 let loginOk = (login.user === user && login.pass === pass)
 
-let computador = {
-    produto: 'Computador',
-    valor: 2000 ,
+class Produto{
+    constructor(nome,valor){
+        this.nome = nome,
+        this.valor = valor
+    } 
+    getNomeValor() {
+       return `${this.nome} -> R$${this.valor}`
+    }
 }
-let impressora = {
-    produto: 'Impressora',
-    valor: 200,
-}
-let mouse = {
-    produto: 'Mouse',
-    valor: 50,
-}
-let celular = {
-    produto: 'Celular',
-    valor: 1500, 
-}
-let carregador = {
-    produto: 'Carregador',
-    valor: 50,
-}
+let catalogo = []
+    catalogo.push(new Produto('Computador',2000))
+    catalogo.push(new Produto('Impressora',200))
+    catalogo.push(new Produto('Mouse',50))
+    catalogo.push(new Produto('Celular',1500))
+    catalogo.push(new Produto('Carregador',50))
 
-let catalogo = [computador, impressora, mouse, celular, carregador]
 let nomesCatalogo = []
 for (let i = 0; i < catalogo.length; i++) {
-    nomesCatalogo.push(`${catalogo[i].produto} -> R$${catalogo[i].valor}`)
+    nomesCatalogo.push(catalogo[i].getNomeValor())
 }
 
 if (loginOk){
     console.log('USUÁRIO LOGADO')
     let escolhaProduto = rs.keyInSelect(nomesCatalogo,'Oque deseja comprar?')
-        if(escolhaProduto > 0 && escolhaProduto < catalogo.length){
-            console.log(`"Obrigado pela compra ${login.user}! Você comprou um(a) ${catalogo[escolhaProduto].produto}. "`)
+        if(escolhaProduto + 1 > 0 && escolhaProduto < catalogo.length){
+            console.log(`"Obrigado pela compra ${login.user}! Você comprou um(a) ${catalogo[escolhaProduto].nome}. "`)
         }else{
             console.log(`Usuário deslogado!`)
         }
