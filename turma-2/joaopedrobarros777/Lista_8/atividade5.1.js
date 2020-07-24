@@ -5,6 +5,35 @@ let dadosCorretos = {
     senha: 9876
 }
 
+let computador = {
+    nome: "computador",
+    valor: "R$ 2.000,00"
+}
+let impressora = {
+    nome: "impressora",
+    valor: "R$ 200,00"
+}
+let mouse = {
+    nome: "mouse",
+    valor: "R$ 50,00"
+}
+let celular = {
+    nome: "celular",
+    valor: "R$ 1.500,00"
+}
+let carregador = {
+    nome: "carregador",
+    valor: "R$ 50,00"
+}
+
+let catalogo = [computador, impressora, mouse, celular, carregador]
+
+let catalogoEmString = []
+
+for (let i = 0; i < catalogo.length; i++){
+    catalogoEmString.push(`${catalogo[i].nome} ${catalogo[i].valor}`)
+}
+
 let usuario = {
     login: rs.question("digite seu login> "),
     senha: rs.question("digite sua senha> ")
@@ -12,23 +41,13 @@ let usuario = {
 
 if (usuario.login == dadosCorretos.login && usuario.senha == dadosCorretos.senha){
     console.log("USUARIO LOGADO")
-    console.log(produtos)
-    console.log("Qual produto deseja?\n")
-    console.log("Se deseja sair, digite: 0")
+    console.log(catalogo)
+    let produtoEscolhido = rs.keyInSelect(catalogoEmString, "O que deseja comprar?")
+    if (produtoEscolhido + 1 == 0){
+        console.log("voce saiu!")
+    }else {
+        console.log(`Voce comprou ${catalogoEmString[produtoEscolhido]}!`)
+    }
 } else {
     console.log("LOGIN/SENHA INCORRETOS")
-}
-
-let produtos = {
-    computador: 2000,
-    impressora: 200,
-    mouse: 50,
-    celular: 1500,
-    carregador: 50
-}
-
-var respostaUsuario = 0
-
-if (respostaUsuario == 0){
-    console.log("voce saiu!")
 }
