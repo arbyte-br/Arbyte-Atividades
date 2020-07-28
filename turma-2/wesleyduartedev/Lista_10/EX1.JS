@@ -1,25 +1,45 @@
-/*(OBRIGATÓRIO) - Crie uma classe que represente um usuário de um
-app como uber ou 99. O Usuário deve ter alguns atributos como nome,
-email, endereço primário, formas de pagamento, etc.*/
+/*1 (Obrigatório) - Crie um programa que contenha duas funções, uma delas deve simular o
+download de uma imagem de forma síncrona e, a outra deve simular o download desta imagem
+de forma assíncrona.*/
 
-var rs = require('readline-sync');
+function simulardownloadSincrona() {
+    for (let i = 0 ; i <101; i++) {
 
+        console.log( `% ${i}`);
 
-class Usuario {
-    constructor (){
-        this.nome = rs.question('Digite seu nome: ');
-        this.email = rs.question('Digite seu email: ');
-        this.endereco = rs.question('Digite seu endereço: ');
-        this.telefone = rs.question('Digite seu telefone: ');
-        this.pagamento = rs.question('Forma de pagamento: ');
-        
     }
-  
-}
+    console.log ( `Imagem baixada!`)
 
-const usuarioUber = new Usuario();
+ }
 
-console.log(`Usuário Uber : `,usuarioUber);
 
-module.exports = usuarioUber;
+  function random (max) {
+        return Math.random()* max
+  }
+
+ function simulardownlondAssincrona(){
+       setTimeout(() => {
+            console.log(`Imagem baixada!`)
+            } , random (10000) )
+       
+ }
+
+  function concluirDownloadSincrona(){
+      console.log(`Renderizando a pagina Sincrona`)
+      simulardownloadSincrona();
+      console.log(`Pagina Sincrona renderizada!`)
+  }
+   function concluirDownloadAssincrona(){
+    console.log(`Renderizando a pagina Assincrona`)
+    simulardownlondAssincrona();
+    console.log(`Pagina Assincrona renderizada!`)
+
+   }
+
+  console.log(concluirDownloadSincrona());
+  //console.log(concluirDownloadAssincrona());
+
+
+
+
 
