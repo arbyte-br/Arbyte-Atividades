@@ -1,19 +1,45 @@
-/*(OBRIGATÓRIO) Crie uma aplicação em JS que receba um nome do usuário e crie um
-novo usuário com o nome fornecido e o imprima na tela(ex.: "{nome: 'Italo'}"). Este
-objeto deve ser criado usando uma classe.*/
+/*1 (Obrigatório) - Crie um programa que contenha duas funções, uma delas deve simular o
+download de uma imagem de forma síncrona e, a outra deve simular o download desta imagem
+de forma assíncrona.*/
 
+function simulardownloadSincrona() {
+    for (let i = 0 ; i <101; i++) {
 
-
-var rs = require('readline-sync');
-
-class Usuario {
-    constructor (){
-        this.nome = rs.question('Digite seu nome: ');
+        console.log( `% ${i}`);
 
     }
-  
-}
+    console.log ( `Imagem baixada!`)
 
-const usuarioQualquer = new Usuario();
+ }
 
-console.log(usuarioQualquer);
+
+  function random (max) {
+        return Math.random()* max
+  }
+
+ function simulardownlondAssincrona(){
+       setTimeout(() => {
+            console.log(`Imagem baixada!`)
+            } , random (10000) )
+       
+ }
+
+  function concluirDownloadSincrona(){
+      console.log(`Renderizando a pagina Sincrona`)
+      simulardownloadSincrona();
+      console.log(`Pagina Sincrona renderizada!`)
+  }
+   function concluirDownloadAssincrona(){
+    console.log(`Renderizando a pagina Assincrona`)
+    simulardownlondAssincrona();
+    console.log(`Pagina Assincrona renderizada!`)
+
+   }
+
+  console.log(concluirDownloadSincrona());
+  //console.log(concluirDownloadAssincrona());
+
+
+
+
+

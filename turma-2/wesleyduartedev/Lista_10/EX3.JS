@@ -1,21 +1,39 @@
-/*(OBRIGATÓRIO) Crie uma aplicação em JS que receba um nome e uma idade do
-usuário e crie um novo usuário com o nome e a idade fornecida e o imprima na tela
-neste formato -> "Olá <nome do usuário>, você tem <idade do usuário> anos!". Este
-objeto deve ser criado usando uma classe.;*/
+/*- (Obrigatório) Crie um programa que simula a compra de um produto no supermercado, o
+programa deve simular o processamento de uma compra e imprimir as seguintes mensagens
+no console:
+1 - Compra em processamento
+2 - Compra aprovada OU Negada (para erros)*/
 
 
-var rs = require('readline-sync');
-
-class Usuario {
-    constructor (){
-        this.nome = rs.question('Digite seu nome: ');
-        this.idade = rs.question('Digite sua idade: ');
-
-    }
-  
+function random (max) {
+    return Math.random()* max
 }
 
-const usuarioQualquer = new Usuario();
+function simulardownlondAssincrona(){
+     return new Promise ((resolva, reject) =>{
+           let r = parseInt(random(10));
+           console.log(r)
+          setTimeout(() => {
+           if ( r %2 === 0 ){
+             resolva (`Compra aprovada (é par)`)
+           }
+        
+           else {
+               reject(`Compra não aprovada (é impar)`);
+           }
+      } , random (10000)) 
+        
+     
+    })
+}
+function concluirDownloadAssincrona(){
+   console.log(`Compra em processo`)
+   simulardownlondAssincrona()
+     .then(res => console.log(res)) 
+     .catch(err => console.log(err)) 
+    console.log(`Termino de processo!`)
 
-console.log(`Olá ${usuarioQualquer.nome}`);
-console.log( `Voce tem ${usuarioQualquer.idade}`);
+  }
+  
+
+  console.log(concluirDownloadAssincrona());

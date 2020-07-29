@@ -1,20 +1,33 @@
-/*(OBRIGATÓRIO) Crie uma aplicação em JS que receba um nome e uma idade do
-usuário e crie um novo usuário com o nome e a idade fornecida e o imprima na tela(ex.:
-"{nome: 'Italo', idade: 22}"). Este objeto deve ser criado usando uma classe.*/
+/*2 - (Obrigatório) - Crie um programa que simula o download de múltiplas imagens de forma
+assíncrona. O programa deve conter ‘.then’ e ‘.catch’ para tratar o sucesso e a falha da
+promisse.*/
 
-
-var rs = require('readline-sync');
-
-class Usuario {
-    constructor (){
-        this.nome = rs.question('Digite seu nome: ');
-        this.idade = rs.question('Digite sua idade: ');
-
-    }
-  
+function random (max) {
+    return Math.random()* max
 }
 
-const usuarioQualquer = new Usuario();
+function simulardownlondAssincrona(){
+     return new Promise ((resolve, reject) =>{
+        setTimeout(() => {
+            try {
+                throw Error("Algum erro")
+            } catch (e) {
+                reject(e)
+            }
+            
+        }, random(2000))
 
-console.log(usuarioQualquer);
-//console.log( `Nome do usuário é: ${usuarioQualquer}`);
+
+     
+    })
+}
+function concluirDownloadAssincrona(){
+   console.log(`Renderizando a pagina Assincrona`)
+   simulardownlondAssincrona()
+     .then(res => console.log(res)) 
+     .catch(err => console.log(err)) 
+   console.log(`Pagina Assincrona renderizada!`)
+
+  }
+
+  console.log(concluirDownloadAssincrona());
