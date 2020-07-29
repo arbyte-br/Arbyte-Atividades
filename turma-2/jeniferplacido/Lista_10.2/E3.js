@@ -12,10 +12,17 @@ function compraAprovada(){
                resolve("Sua compra foi aprovada")
            }else(valorDaCompra >= saldoCartao)
            reject("Sua compra não foi aprovada!")
-        }, random(1000))
+        }, (5000))
     })
     }
     function random(max) {
         return Math.random() * max;
       }
-    
+    function compraEmProcessamento(){
+        
+            compraAprovada()
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+        console.log("Compra em Processamento")
+    }
+  compraEmProcessamento()
