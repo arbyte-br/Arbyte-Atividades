@@ -1,12 +1,30 @@
-/* Usando a classe do exercício anterior, crie métodos que representem possíveis ações do usuário no aplicativo.ex: solicitarNovaViagem(local), editarEnderecoPrimario(endereco), adicionarFormaDePagamento(pagamento) */
+let rs = require('readline-sync')
+let numeroImagens = rs.questionInt('Quantas imagens deseja fazer o download? ')
 
-const rs = require('readline-sync');
-const {HorseApp} = require('./E1');
+function downloadAssincrono() {
+    return new Promise((resolve, reject) => {
 
-const appUser = new HorseApp('luigi sampaio', 'luigi@sampaio.com.br');
+        setTimeout(() => {
+            resolve()
+        }, 6000)
+        setTimeout(() => {
+            reject()
+        }, 6000)
 
-appUser.editEndPrimary('novo endereco');
-appUser.edtiPayment('cartao');
-appUser.editDestination('rua das gambiarras');
+    })
+}
+chamadasDaFunction = []
+for (let i = 1; i <= numeroImagens; i++) {
+    console.log('Baixando imagem: ' + i)
+    chamadasDaFunction.push(downloadAssincrono())
+}
+function asyncDownload() {
 
-console.log(appUser);
+    console.log('Efetuando download...')
+
+    Promise.all(chamadasDaFunction)
+    .then(res => console.log('Imagens baixadas!'))
+    .catch(err => console.log('Falha no download.'))
+}
+
+    asyncDownload()
