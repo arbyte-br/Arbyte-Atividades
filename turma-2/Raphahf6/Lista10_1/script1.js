@@ -93,6 +93,10 @@ adicionaSaldo = (usuario99) =>{
 
 let novoUsuario = criarUsuario()
 
+adicionaSaldo(novoUsuario)
+
+console.log(novoUsuario.saldo)
+
 
 
 
