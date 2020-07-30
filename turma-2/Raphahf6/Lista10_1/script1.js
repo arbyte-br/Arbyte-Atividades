@@ -86,9 +86,12 @@ criarMotorista = () =>{
     return motorista
 }
 
-let novoUsuario = criarUsuario()
+adicionaSaldo = (usuario99) =>{
+    let addSaldo = rs.questionInt('Digite a quantia de dinheiro que deseja adicionar ao seu saldo: ')
+     return usuario99.saldo += addSaldo
+}
 
-solicitarNovaViagem(novoUsuario, 50)
+let novoUsuario = criarUsuario()
 
 
 
