@@ -1,11 +1,15 @@
-let rs = require('readline-sync')
+/* (OBRIGATÓRIO) - Crie um método estático que calcule a estimativa de valor da corrida. Ele deve receber um valor em km e retornar um valor em reais */
 
-class Usuario {
-    constructor (nome) {
-        this.nome = rs.question('Insira seu nome: ')
-        this.idade = rs.questionInt('Insira sua idade: ')
+const {HorseApp} = require('./E1');
+
+class ValueRun {
+
+    static getId(km, value){
+        return `Valor estimado da corrida: ${km * value} R$`;
     }
 }
 
-let usuario = new Usuario ()
-console.log (`Olá ${usuario.nome}, você tem ${usuario.idade} anos!`)
+const app = new HorseApp('aline sampaio', 'aline@sampaio.com.br', 'rua das margaridas', 'pic pay', 'rua das raivosas');
+
+console.log(app);
+console.log(ValueRun.getId(3, 5));

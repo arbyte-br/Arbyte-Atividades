@@ -1,11 +1,12 @@
-let rs = require('readline-sync')
+/* Usando a classe do exercício anterior, crie métodos que representem possíveis ações do usuário no aplicativo.ex: solicitarNovaViagem(local), editarEnderecoPrimario(endereco), adicionarFormaDePagamento(pagamento) */
 
-class Usuario {
-    constructor (nome) {
-        this.nome = rs.question('Insira seu nome: ')
-        this.idade = rs.questionInt('Insira sua idade: ')
-    }
-}
+const rs = require('readline-sync');
+const {HorseApp} = require('./E1');
 
-let usuario = new Usuario ()
-console.log (usuario) 
+const appUser = new HorseApp('luigi sampaio', 'luigi@sampaio.com.br');
+
+appUser.editEndPrimary('novo endereco');
+appUser.edtiPayment('cartao');
+appUser.editDestination('rua das gambiarras');
+
+console.log(appUser);
