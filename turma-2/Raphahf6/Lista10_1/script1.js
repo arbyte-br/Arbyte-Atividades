@@ -1,51 +1,97 @@
-// 1 (OBRIGATÓRIO) - Crie uma classe que represente um usuário de um
-// app como uber ou 99. O Usuário deve ter alguns atributos como nome,
-// email, endereço primário, formas de pagamento, etc.
+const rs = require('readline-sync')
 
-// 2 (OBRIGATÓRIO) - Usando a classe do exercício anterior, crie métodos
-// que representem possíveis ações do usuário no aplicativo.
-
-// ex: solicitarNovaViagem(local), editarEnderecoPrimario(endereco),
-// adicionarFormaDePagamento(pagamento)
-
-class Pessoa {
-    constructor(nome, email, endereco, formaDePagamento){
+class Usuario {
+    constructor(nome, email, cpf, saldo) {
         this.nome = nome
         this.email = email
-        this.endereco = endereco
-        this.formaDePagamento = [formaDePagamento]
+        this.cpf = cpf
+        this.endereco
+        this.formaDePagamento = []
+        this.saldo = saldo
 
-    }
-
-    solicitarNovaViagem(local){
-        this.local = local
-        console.log(`Solicitando viagem para ${this.local}`)
     }
 
     editarEnderecoPrimario(enderecoEditado) {
         this.endereco = enderecoEditado
     }
 
-    adicionarFormaDePagamento(novaFormaDePagamento){
-        this.novaFormaDePagamento = novaFormaDePagamento
+    adicionarFormaDePagamento(novaFormaDePagamento) {
         this.formaDePagamento.push(novaFormaDePagamento)
+    }
+
+
+}
+
+
+class Motorista99 {
+    constructor(nome, email, cpf, cnh, telefone) {
+        this.nome = nome
+        this.cpf = cpf
+        this.cnh = cnh
+        this.email = email
+        this.telefone = telefone
+    }
+
+    getCpf() {
+        return (`CPF: ${this.cpf}`)
     }
 }
 
-let usuario99 = new Pessoa('raphael', 'raphaellima6@gmail.com', 'rua feitiço da vila', 'picpay')
-
-usuario99.adicionarFormaDePagamento('MasterCard')
-
-console.log(usuario99)
-
-
 calcularValorDaCorrida = (kilometros) => {
-    this.valorDaCorrida = kilometros * 2
-    return(`O valor da corrida é ${this.valorDaCorrida}`)
+    valorDaCorrida = kilometros * 2
+    return valorDaCorrida
+
 }
 
-console.log(calcularValorDaCorrida(20))
+solicitarNovaViagem = (usuario99, kilometros) => {
+    let valorDaCorrida = calcularValorDaCorrida(kilometros)
+    console.log('Processando...')
+    setTimeout(() => {
+        console.log(`A sua corrida ficara no valor de ${valorDaCorrida} reais...`)
+        if (usuario99.saldo >= valorDaCorrida) {
+            console.log('Solicitando nova viagem...')
+        } else {
+            console.log('Saldo insuficiente...')
+        }
+    }, 1000);
+
+
+}
+
+criarUsuario = () => {
+    console.log('Bem vindo ao aplicativo 99, agora vamos criar seu novo usuario...')
+
+    nome = rs.question('Digite o seu nome por favor: ')
+    email = rs.question('Digite o seu email por favor: ')
+    cpf = rs.questionInt('Digite o numero do seu cpf: ')
+    saldo = rs.questionFloat('Digite quanto deseja adicionar ao seu saldo: ')
+    const usuario = new Usuario(nome, email, cpf, saldo)
+    console.log('Criando o seu usuario...')
+
+    console.log(`${usuario.nome}. Bem vindo ao aplicativo 99!`)
+
+    return usuario
+}
+
+criarMotorista = () =>{
+    console.log('Agora vamos criar seu perfil de motorista99...')
+    let nome = rs.question('Digite o seu nome: ')
+    let email = rs.question('Digite o seu email: ')
+    let telefone = rs.questionInt('Digite o numero do seu celular: ')
+    let cpf = rs.questionInt('Digite o numero do seu cpf: ')
+    let cnh = rs.questionInt('Digite o numero da sua cnh: ')
+
+    let motorista = new Motorista99(nome, email, cpf, cnh, telefone)
+
+    return motorista
+}
+
+let novoUsuario = criarUsuario()
+
+solicitarNovaViagem(novoUsuario, 50)
 
 
 
-module.exports = Pessoa;
+
+
+
