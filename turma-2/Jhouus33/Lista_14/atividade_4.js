@@ -13,7 +13,7 @@ class Usuario {
     }
 }
 
-let usuario = new Usuario('Maryalua', rs.question('Insira um CEP:'))
+let usuario = new Usuario('Jhouus', rs.question('Insira um CEP:'))
 
 function buscaEndereco(cep) {
     const urlComCep=(`https://api.postmon.com.br/v1/cep/${cep}`);
