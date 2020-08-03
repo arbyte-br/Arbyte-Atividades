@@ -9,4 +9,4 @@ class Usuario {
     }
 }
 let usuario = new Usuario
-console.log(usuario)
+console.log("Bem vindo " + usuario.nome)

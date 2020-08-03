@@ -1,8 +1,3 @@
-// Usando a classe do exercício anterior,
-//  crie métodos que representem possíveis ações do usuário no aplicativo.
-//  ex: solicitarNovaViagem(local), editarEnderecoPrimario(endereco),
-//   adicionarFormaDePagamento(pagamento)
-
 let rs = require('readline-sync')
 
 class Usuario {
