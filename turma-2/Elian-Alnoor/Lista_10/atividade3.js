@@ -1,16 +1,28 @@
-// Crie uma aplicação em JS que receba um nome e uma idade do 
-// usuário e crie um novo usuário com o nome e a idade fornecida e o imprima na tela 
-// neste formato -> "Olá <nome do usuário>, você tem <idade do usuário> anos!". Este 
-// objeto deve ser criado usando uma classe. 
+// Crie um método estático que calcule a estimativa de 
+// valor da corrida. Ele deve receber um valor em km e retornar um valor em 
+// reais.
 const rs = require('readline-sync')
 
 class Usuario {
-    constructor(){
-    this.nome = rs.question('Informe o seu nome:\n')
-
-    this.idade = rs.questionInt('Informe a sua idade:\n')
+    constructor() {
+        this.nome = 'Elian',
+        this.email = 'elian@elian.com.br'
+        this.endereçoPrimario = 'rua dos sírios, 758'
+        this.formaPagamento = 'credito'
+    }
+    chamar = () =>{
+        let destino = rs.question('para onde quer ir?\n')
+        console.log(`Você vai de ${this.endereçoPrimario} para ${destino}`)
+    }
+    mudarFormaPag = () =>{
+        let novaForma = rs.question('qual seria a forma de pagamento?\n')
+        console.log(`agora vai pagar com ${novaForma}`)
+    }
+    valorCorrida = (distancia) => {
+        let valor = distancia * 1.95
+        return `Você vai viajar ${distancia} km, e vai pagar o valor de R$ ${valor}`
+    }
 }
-}
-
 let user = new Usuario()
-console.log(`Olá ${user.nome}, você tem ${user.idade} anos`)
+
+console.log(user.valorCorrida(4.2))

@@ -1,11 +1,15 @@
-// Crie uma aplicação em JS que receba um nome do usuário e crie um 
-// novo usuário com o nome fornecido e o imprima na tela(ex.: "{nome: 'Italo'}"). Este 
-// objeto deve ser criado usando uma classe.
+// Crie uma classe que represente um usuário de um 
+// app como uber ou 99. O Usuário deve ter alguns atributos como nome, 
+// email, endereço primário, formas de pagamento, etc.
+
 class Usuario {
-    constructor(nome){
-        this.nome = nome
+    constructor() {
+        this.nome = 'Elian',
+        this.email = 'elian@elian.com.br'
+        this.endereçoPrimário = 'rua dos sírios, 758'
+        this.formaPagamento = 'credito'
     }
 }
-let user = new Usuario('Elian')
 
+const user = new Usuario()
 console.log(user)
