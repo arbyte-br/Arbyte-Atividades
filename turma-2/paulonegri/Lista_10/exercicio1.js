@@ -14,21 +14,21 @@ const rs = require('readline-sync');
 
 class Carro{
     constructor(nome, modelo, cor){
-        this.nome = nome;
-        this.modelo = modelo;
-        this.cor = cor;
+        this.nome = rs.question('qual o nome do carro escolhido?\n');
+        this.modelo = rs.question('qual o modelo do carro escolhido?\n');
+        this.cor = rs.question('qual a cor do carro escolhido?\n');
     }
 }
 
 const primeiroCarro = new Carro();
-primeiroCarro.nome = rs.question('qual o nome do carro escolhido?\n');
-primeiroCarro.modelo = rs.question('qual o modelo do carro escolhido?\n');
-primeiroCarro.cor = rs.question('qual a cor do carro escolhido?\n');
+primeiroCarro.nome 
+primeiroCarro.modelo
+primeiroCarro.cor 
 
 const segundoCarro = new Carro();
-segundoCarro.nome = rs.question('qual o nome do carro escolhido?\n');
-segundoCarro.modelo = rs.question('qual o modelo do carro escolhido?\n');
-segundoCarro.cor = rs.question('qual a cor do carro escolhido?\n');
+segundoCarro.nome 
+segundoCarro.modelo 
+segundoCarro.cor 
 
 primeiroCarro.nome === segundoCarro.nome || primeiroCarro.modelo === segundoCarro.modelo 
     ? console.log('Os carros são iguais.')
