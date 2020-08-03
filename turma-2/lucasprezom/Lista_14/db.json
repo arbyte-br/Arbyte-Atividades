@@ -1,0 +1,49 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Maçã",
+      "preco": 2.3
+    },
+    {
+      "id": 2,
+      "nome": "Uva",
+      "preco": 8
+    },
+    {
+      "id": 3,
+      "nome": "Uva Sem Caroço",
+      "preco": 16
+    },
+    {
+      "id": 4,
+      "nome": "Abacaxi",
+      "preco": 5
+    },
+    {
+      "id": 5,
+      "nome": "Laranja Saco de 1 Kg",
+      "preco": 17.5
+    },
+    {
+      "id": 6,
+      "nome": "Salgadinho Torcida",
+      "preco": 1.99
+    },
+    {
+      "nome": "Feijão preto",
+      "preco": 4.5,
+      "id": 7
+    },
+    {
+      "nome": "Feijão branco",
+      "preco": 8,
+      "id": 8
+    },
+    {
+      "nome": "Chinelo usado",
+      "preco": 20,
+      "id": 9
+    }
+  ]
+}
