@@ -1,35 +1,28 @@
-/*1. (OBRIGATÓRIO) Crie um programa que:
-a. Peça o nome de 2 usuários;
-b. Para cada usuário, peça 1 número;
-c. Imprima na tela qual usuário digitou o maior número.
-d. Pare a execução.
-Neste exercício, cada usuário deve ser representado por um objeto. O nome e o número
-do usuário devem ser propriedades deste objeto.
-*/
+function funcao (){
+    let teste = 'Isso é um teste'
 
-let rs = require('readline-sync')
-
-let nomeUser1 = rs.question(console.log('Digite seu nome: '))
-let nomeUser2 = rs.question(console.log('Digite outro nome: '))
-let numberUser1 = rs.questionInt(console.log('Por favor ${nomeUser1} digite um número: '))
-let numberUser2 = rs.questionInt(console.log('Por favor ${nomeUser2} digite um número: '))
-
-let user1 = {
-    nome: nomeUser1,
-    numeroEscolhido: numberUser1
 }
+funcao()
+console.log(teste)
 
-let user2 = {
-    nome: nomeUser2,
-    numeroEscolhido: numberUser2
+
+//b) Declare uma variável dentro de um bloco (if, else, for, etc.) e tente acessar a mesma
+
+var numeroMaior = 5
+var numeroMenor = 3
+
+if(numeroMaior > numeroMenor){
+
 }
+console.log(numeroMaior)
 
-console.log(user1)
-console.log(user2)
+//c) Declare duas vezes a mesma variável no mesmo escopo
 
-if (nomeUser1 + numberUser1 >= 0) {
-    console.log(nomeUser1)
+let faustao = 'oloco'
 
-} else {
-    console.log(nomeUser2)
-}
+
+let faustao = 'oloco bicho'
+let outroFausto = 'está fera ai meo'
+
+console.log()
+console.log()
