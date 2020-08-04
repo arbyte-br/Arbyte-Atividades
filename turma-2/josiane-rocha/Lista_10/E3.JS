@@ -1,28 +1,11 @@
-let saldo = false // true
+let rs = require('readline-sync')
 
-function simulateCompra() {
-    return new Promise((resolve, reject) => {
-        if (saldo) {
-            setTimeout(() => {
-                resolve('compra realizada!')
-            }, 4000)
-        }
-        else {
-            setTimeout(() => {
-                reject('compra negada!')
-            }, 4000)
-        }
-    })
+class Usuario {
+    constructor (nome) {
+        this.nome = rs.question('Insira seu nome: ')
+        this.idade = rs.questionInt('Insira sua idade: ')
+    }
 }
 
-function compra() {
-    console.log('*Usuario escolheu seus produtos*');
-
-    simulateCompra()
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
-
-    console.log('Realizando pagamento da compra...');
-}
-
-compra()
+let usuario = new Usuario ()
+console.log (`Olá ${usuario.nome}, você tem ${usuario.idade} anos!`)

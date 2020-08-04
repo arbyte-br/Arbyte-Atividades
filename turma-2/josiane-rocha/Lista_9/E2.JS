@@ -1,4 +1,10 @@
-const letras = ['a', 'b', 'c']
+let rs = require('readline-sync')
+const FasamImc = require('fasam-imc-calc');
+const chalk = require('chalk');
 
-const outrasLetras = ['a', 'b', 'c', ...letras]
-console.log(outrasLetras) 
+let peso = rs.questionFloat('Insira seu peso: ')
+let altura = rs.questionFloat('Insira sua altura: ')
+
+const imc = new FasamImc(peso, altura);
+
+console.log('Seu IMC é:' + chalk.blueBright(imc.calc()))

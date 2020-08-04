@@ -1,30 +1,33 @@
-/*Agora crie um usuário que represente um motorista, com atributos e métodos próprios. Lembre-se que você deve evitar códigoduplicado. Logo, você pode extrair alguns comportamentos do usuário criado anteriormente para um usuário base e a partir daí fazer com que UsuarioCliente e UsuarioMotorista sejam filhas da classe pai.*/
-// const {HorseApp} = require('./E1');
-
-class Driver {
-    constructor(name, car, board){
-        this.name = name;
-        this.car = car;
-        this.board = board;
+const rs = require('readline-sync')
+class Carro {
+    constructor(){
+        this.nome = rs.question('Insira o nome do seu carro: ')
+        this.modelo = rs.question('Insira o modelo do carro: ')
+        this.cor = rs.question('Insira a cor do seu carro: ')
     }
-
-    saudacao (){
-        return `Olá meu nome é ${this.name} 
-        modelo do carro ${this.car} e a placa ${this.board}`;
+    comparaCarro(carro1, carro2){
+    carro1.nome === carro2.nome && carro1.modelo ===  carro2.modelo ? console.log(` ${carro1} e ${carro2} são iguais`) 
+    : console.log(` ${carro1} e ${carro2} são diferentes`)
     }
-}
+}   
 
-let dvr = new Driver('driver', 'gol', 'abc1234');
+    console.log('=============== carro1==============')
 
-console.log(dvr);
+    let carro1 = new Carro ()
 
-class Interation extends Driver{
-        constructor (){
-            super();
-        }
-}
+    console.log('=============== carro2==============')
 
-let drive = new Driver('new driver', 'palio', 'def5678');
-drive.saudacao();
+    let carro2 = new Carro ()
 
-console.log(drive);
+    comparaCarro(carro1, carro2)
+
+
+
+
+    // if(carro1.nome === carro2.nome && carro1.modelo ===  carro2.modelo){
+    //     console.log(` ${carro1} e ${carro2} são iguais`)
+
+    // }
+    // else {
+    //     console.log(` ${carro1} e ${carro2} são diferentes`)
+    // }

@@ -1,28 +1,21 @@
-function funcao (){
-    let teste = 'Isso é um teste'
+let rs = require('readline-sync')
+let median = require('median')
 
-}
-funcao()
-console.log(teste)
-
-
-//b) Declare uma variável dentro de um bloco (if, else, for, etc.) e tente acessar a mesma
-
-var numeroMaior = 5
-var numeroMenor = 3
-
-if(numeroMaior > numeroMenor){
-
-}
-console.log(numeroMaior)
-
-//c) Declare duas vezes a mesma variável no mesmo escopo
-
-let faustao = 'oloco'
+let usuarioNota1 = rs.questionInt('Insira sua nota: ')
+let usuarioNota2 = rs.questionInt('Insira sua nota: ')
+let usuarioNota3 = rs.questionInt('Insira sua nota: ')
+let usuarioNota4 = rs.questionInt('Insira sua nota: ')
 
 
-let faustao = 'oloco bicho'
-let outroFausto = 'está fera ai meo'
 
-console.log()
-console.log()
+let listaNota = [usuarioNota1, usuarioNota2, usuarioNota3, usuarioNota4]
+
+let valor = median(listaNota)
+
+console.log(`A sua media de notas é: ${valor}`)
+
+// var median = require('median')
+// var arr = [1, 15, 200, 30]
+// var value = median(arr)
+
+// console.log("median value is " + value)

@@ -1,5 +1,12 @@
-const letras = {a: 'a', b: 'b', c: 'c', d: 'd', e: 'e'}
+let rs = require ('readline-sync')
+const isPrime = require('prime-number')
 
-const newLetras = {...letras}
+let numero = rs.questionInt('Insira um numero: ')
+let ehPrimo = isPrime(numero)
 
-console.log(newLetras)
+if(ehPrimo === false){
+    console.log(`${numero} não é primo!`)
+}
+else {
+    console.log(`${numero} é primo!`)
+} 
