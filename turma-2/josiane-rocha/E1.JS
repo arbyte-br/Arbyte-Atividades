@@ -1,28 +1,28 @@
-function funcao (){
-    let teste = 'Isso é um teste'
+class HorseApp {
+
+    constructor(name, email, endPrimary, payment,destination){
+
+        this.name = name;
+        this.email = email;
+        this.endPrimary = endPrimary;
+        this.payment = payment;
+        this.destination = destination;
+    }
+
+    editEndPrimary (newEnd) {
+        return this.endPrimary = newEnd;
+    }
+
+    edtiPayment (pay) {
+        return this.payment = pay;
+    }
+
+    editDestination (dest) {
+        return this.destination = dest;
+    }
 
 }
-funcao()
-console.log(teste)
 
+const app = new HorseApp('Luigi Sampaio', 'example@example.com.br', 'ruas das margaridas', 'dinheiro', 'rua dos bobos');
 
-//b) Declare uma variável dentro de um bloco (if, else, for, etc.) e tente acessar a mesma
-
-var numeroMaior = 5
-var numeroMenor = 3
-
-if(numeroMaior > numeroMenor){
-
-}
-console.log(numeroMaior)
-
-//c) Declare duas vezes a mesma variável no mesmo escopo
-
-let faustao = 'oloco'
-
-
-let faustao = 'oloco bicho'
-let outroFausto = 'está fera ai meo'
-
-console.log()
-console.log()
+module.exports = {HorseApp}; 
