@@ -1,28 +1,41 @@
-class HorseApp {
+let rs = require('readline-sync')
 
-    constructor(name, email, endPrimary, payment,destination){
+console.log('===== DOWNLOAD SINCRONO =====')
 
-        this.name = name;
-        this.email = email;
-        this.endPrimary = endPrimary;
-        this.payment = payment;
-        this.destination = destination;
+function downloadSincrono(imagem){
+    if(imagem){
+        return console.log('Download concluído!')
+    } else{
+        return console.log('Falha no download!')
     }
+}
+function processImagen(callback){
+    console.log('Efetuando download de imagem...')
+    let imagem = rs.keyInYN('Deseja que o download seja concluído? ')
+    callback(imagem)
+}
+processImagen(downloadSincrono)
 
-    editEndPrimary (newEnd) {
-        return this.endPrimary = newEnd;
-    }
+console.log('===== DOWNLOAD ASSINCRONO =====')
 
-    edtiPayment (pay) {
-        return this.payment = pay;
-    }
+function downloadAssincrono() {
+    return new Promise((resolve, reject) => {
+        console.log('Efetuando download...')
+        let sucesso = rs.keyInYN('Deseja que o download seja concluído? ')
 
-    editDestination (dest) {
-        return this.destination = dest;
-    }
-
+        if (sucesso) {
+            setTimeout(() => {
+                resolve('Download concluído!')
+            }, 3000)
+        }
+        else {
+            setTimeout(() => {
+                reject('Falha no download!')
+            }, 3000)
+        }
+    })
 }
 
-const app = new HorseApp('Luigi Sampaio', 'example@example.com.br', 'ruas das margaridas', 'dinheiro', 'rua dos bobos');
-
-module.exports = {HorseApp}; 
+downloadAssincrono()
+    .then(res => console.log(res))
+    .catch(err => console.log(err));

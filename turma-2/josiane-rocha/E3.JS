@@ -1,15 +1,28 @@
-/* (OBRIGATÓRIO) - Crie um método estático que calcule a estimativa de valor da corrida. Ele deve receber um valor em km e retornar um valor em reais */
+let saldo = false // true
 
-const {HorseApp} = require('./E1');
-
-class ValueRun {
-
-    static getId(km, value){
-        return `Valor estimado da corrida: ${km * value} R$`;
-    }
+function simulateCompra() {
+    return new Promise((resolve, reject) => {
+        if (saldo) {
+            setTimeout(() => {
+                resolve('compra realizada!')
+            }, 4000)
+        }
+        else {
+            setTimeout(() => {
+                reject('compra negada!')
+            }, 4000)
+        }
+    })
 }
 
-const app = new HorseApp('aline sampaio', 'aline@sampaio.com.br', 'rua das margaridas', 'pic pay', 'rua das raivosas');
+function compra() {
+    console.log('*Usuario escolheu seus produtos*');
 
-console.log(app);
-console.log(ValueRun.getId(3, 5));
+    simulateCompra()
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+
+    console.log('Realizando pagamento da compra...');
+}
+
+compra()
