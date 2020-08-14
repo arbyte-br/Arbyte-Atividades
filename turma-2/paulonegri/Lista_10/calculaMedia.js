@@ -8,6 +8,6 @@ function media(numeros) {
 }
 
 module.exports = {
-     media,
-     numeros
+    media,
+    numeros
 }

@@ -8,7 +8,7 @@ números, utilize o módulo criado para calcular a média e no final imprima o r
 para o usuário.*/
 
 const rs = require('readline-sync');
-let meuModulo = require('./calcula-media');
+let meuModulo = require('./calculaMedia');
 
 numeros = [];
 numeros.push(rs.questionInt(`Digite um numero: `));
