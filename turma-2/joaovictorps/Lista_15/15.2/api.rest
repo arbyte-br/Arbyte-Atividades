@@ -1,0 +1,13 @@
+POST http://localhost:3000/products/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Iphone 10",
+    "preco": 1.899.99,
+    "estoque": 7,
+    "codigoDeBarras": 0112233445566
+}
+
+###
+GET http://localhost:3000/products HTTP/1.1
+Content-Type: application/json
