@@ -8,7 +8,6 @@ const connectDatabase = async() => {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
-    console.log(database)
 
     return database
 }
@@ -19,9 +18,11 @@ const createProductSchema = async(database) => {
     }
     productSchema = new database.Schema({
         nome: String,
-        preco: String,
+        preco: Number,
         estoque: Number,
         codigoDeBarras: String
+    }, {
+        timestamps: true
     })
 
     database.model('Product', productSchema)
@@ -32,7 +33,7 @@ const createProductSchema = async(database) => {
 // Create
 const createProduct = async (body) => {
     let database = await connectDatabase()
-    await createProductSchema()
+    await createProductSchema(database)
     const {Product} = database.models
 
     const product = new Product({...body})
@@ -45,7 +46,7 @@ const createProduct = async (body) => {
 // Read
 const readProducts = async() => {
     let database = await connectDatabase()
-    await createProductSchema()
+    await createProductSchema(database)
     const {Product} = database.models
 
     const products = Product.find()
@@ -56,7 +57,7 @@ const readProducts = async() => {
 // Update
 const updateProduct= async({id}, {nome, preco, estoque, codigoDeBarras}) => {
     let database = await connectDatabase()
-    await createProductSchema()
+    await createProductSchema(database)
     const {Product} = database.models
 
     return Product.updateOne({_id: id}, {nome, preco, estoque, codigoDeBarras}) 
@@ -65,15 +66,29 @@ const updateProduct= async({id}, {nome, preco, estoque, codigoDeBarras}) => {
 // Delete
 const deleteProduct= async({id}) => {
     let database = await connectDatabase()
-    await createProductSchema()
+    await createProductSchema(database)
     const {Product} = database.models
 
     return Product.deleteOne({_id: id})
+}
+
+// ReadAz
+const readProductsAz = async({letra}) => {
+    let database = await connectDatabase()
+    await createProductSchema(database)
+    const {Product} = database.models
+
+    let regex = new RegExp(`^${letra}`, `i`)
+
+    let response = await Product.find({nome: regex})
+
+    return response
 }
 
 module.exports = {
     createProduct,
     readProducts,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    readProductsAz
 }
