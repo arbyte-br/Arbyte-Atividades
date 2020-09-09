@@ -1,0 +1,37 @@
+POST http://localhost:3000/produtos/create HTTP/1.1
+content-type: application/json
+
+{   
+     "name": "Camisa Sao Paulo",
+        "preço": 100.00,
+        "estoque": 1,
+        "codigoDeBarras": 242342352352
+}
+
+
+###
+//Mostra 
+GET http://localhost:3000/produtos HTTP/1.1
+Content-Type: application/json
+
+
+###
+//Atualiza pelo ID
+PUT http://localhost:3000/produtos/update/ HTTP/1.1
+Content-Type: application/json
+
+{
+      "name": "Camisa Corinthians",
+        "preço": 100.00,
+        "estoque": 1,
+        "codigoDeBarras": 242342352352
+}
+
+
+
+###
+//deletando
+DELETE http://localhost:3000/produtos/delete/5f56abff0da99e2f74c638c3 HTTP/1.1
+Contente-Content-Type: application/json
+
+
