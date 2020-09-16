@@ -1,46 +1,33 @@
 const cars = require('./cars.json')
 const rs = require('readline-sync')
 
-let carroMaior;
 const acharMaiorAceleracao= (cars) => {
-    for (let i = 0; i < cars.length; i++) {
-        let carro = cars[i]
-        let achouMaior = false
-        for(let j = 0; j < cars.length; j++) {
-            let carro2 = cars[j]
-            if(carro.Acceleration < carro2.Acceleration) {
-                achouMaior = true
-            }
-        }
-    
-        if(achouMaior === false) {
-            carroMaior = carro
-        }
-        
-    }
+    let carroMaiorAceleracao;
+    let ultimaAceleracao = 0
 
-    console.log(`Carro com maior aceleração: ${carroMaior}`)
+    cars.forEach(carro => {
+        if(carro.Acceleration > ultimaAceleracao) {
+            carroMaiorAceleracao = carro
+            ultimaAceleracao = carro.Acceleration
+        }
+    })
+
+    console.log(carroMaiorAceleracao)
 }
 
 
 const acharMaiorPotencia = (cars) => {
-    for (let i = 0; i < cars.length; i++) {
-        let carro = cars[i]
-        let achouMaior = false
-        for(let j = 0; j < cars.length; j++) {
-            let carro2 = cars[j]
-            if(carro.Horsepower < carro2.Horsepower) {
-                achouMaior = true
-            }
-        }
-        
-        if(achouMaior === false) {
-            carroMaior = carro
-        }
-        
-    }
+    let carroMaiorHorsepower;
+    let ultimaHorsepower = 0
 
-    console.log(`Carro com maior potência: ${carroMaior}`)
+    cars.forEach(carro => {
+        if(carro.Horsepower > ultimaHorsepower) {
+            carroMaiorHorsepower = carro
+            ultimaHorsepower = carro.Horsepower
+        }
+    })
+
+    console.log(carroMaiorHorsepower)
 } 
 
 let resposta = rs.question('[A] - Carro com maior aceleração. \n[B] - Carro com maior potência.\n')
