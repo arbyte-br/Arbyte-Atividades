@@ -1,0 +1,32 @@
+POST http://localhost:3000/products/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "Xiaomi Redmi 8A",
+    "preco": 1549.99,
+    "estoque": 5,
+    "codigoDeBarras": "314450951429438"
+}
+
+###
+GET http://localhost:3000/products HTTP/1.1
+Content-Type: application/json
+
+###
+PUT http://localhost:3000/products/update/id HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "",
+    "preco": ,
+    "estoque": ,
+    "codigoDeBarras": ""
+}
+
+###
+DELETE http://localhost:3000/products/delete/id HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3000/products/s HTTP/1.1
+Content-Type: application/json

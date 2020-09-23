@@ -1,0 +1,302 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "NODEJS com swagger",
+        "description": "Documentação viva de uma API",
+        "license": {
+            "name": "MIT",
+            "ult": "https://opensouce.org/licenses/MIT"
+        }
+    },
+    "tags": [{
+        "name": "Products",
+        "description": "Endpoints referentes ao domínio de products"
+    }],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/products": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Retorna todos os produtos cadastrados",
+                "responses": {
+                    "200": {
+                        "description": "Lista os produtos",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/definitions/Products"
+                                }
+                            }
+                        }
+                    },
+                    "5XX": {
+                        "description": "Houve algum erro"
+                    }
+                }
+            }
+        },
+        "/products/create": {
+            "post": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Insere um novo produto no banco de dados",
+                "requestBody": {
+                    "description": "Dados do produto",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref":"#/definitions/Product"
+                            }
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "5XX": {
+                        "description": "Erro inesperado."
+                    }
+                }
+            }
+        },
+        "/products/update/{id}": {
+            "put": {
+                "summary": "Atualiza o product correspondente ao ID",
+                "tags": [
+                    "Products"
+                ],
+
+                "requestBody": {
+                    "description": "Propriedades do product",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Product"
+                            }
+                        }
+                    }
+                },
+                "parameters": [{
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "description": "ID do product que iremos atualizar",
+                    "schema": {
+                        "$ref":"#/definitions/id"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description":"OK",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "$ref":"#/definitions/UpdateResponse"
+                                }
+                            }
+                        }
+                    },
+                    "5XX":{
+                        "description":"Erro inesperado."
+                    }
+                }
+            }
+        },
+        "/products/delete/{id}": {
+            "delete": {
+                "summary": "Deleta o product correspondente ao ID",
+                "tags":[
+                    "Products"
+                ],
+                "parameters": [{
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "description": "ID do product que iremos deletar",
+                    "schema": {
+                        "$ref":"#/definitions/id"
+                    }
+                }],
+                "responses": {
+                    "200":{
+                        "description":"Ok",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "$ref":"#/definitions/DeleteResponse"
+                                }
+                            }
+                        }
+                    },
+                    "5XX": {
+                        "description":"Erro inesperado."
+                    }
+                }
+            }
+        }  
+    },
+    "definitions": {
+        "Products": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "nome": {
+                        "type": "string"
+                    },
+                    "preco": {
+                        "type": "number"
+                    },
+                    "estoque": {
+                        "type": "number"
+                    },
+                    "codigoDeBarras": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Product": {
+            "type":"object",
+            "properties": {
+                "nome": {
+                    "type": "string"
+                },
+                "preco": {
+                    "type": "number"
+                },
+                "estoque": {
+                    "type": "number"
+                },
+                "codigoDeBarras": {
+                    "type": "string"
+                }
+            }
+        },
+        "id": {
+            "properties": {
+                "_id": {
+                    "type":"string"
+                }
+            }
+        },
+        "UpdateResponse": {
+            "type": "object",
+            "properties": {
+                "n": {
+                    "type":"number"
+                },
+                "nModified": {
+                    "type": "number"
+                },
+                "opTime": {
+                    "type":"object",
+                    "properties": {
+                        "ts": {
+                            "type": "string"
+                        },
+                        "t": {
+                            "type": "number"
+                        }
+                    }
+                },
+                "electionId": {
+                    "type": "string"
+                },
+                "ok": {
+                    "type": "number"
+                },
+                "$clusterTime": {
+                    "type": "object",
+                    "properties": {
+                        "clusterTime": {
+                            "type": "string"
+                        },
+                        "signature": {
+                            "type": "object",
+                            "properties": {
+                                "hash": {
+                                    "type":"string"
+                                },
+                                "keyId": {
+                                    "type":"string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationTime": {
+                    "type": "string"
+                }
+            }
+        },
+        "DeleteResponse": {
+            "type": "object",
+            "properties": {
+                "n": {
+                    "type":"number"
+                },
+                "opTime": {
+                    "type":"object",
+                    "properties": {
+                        "ts": {
+                            "type": "string"
+                        },
+                        "t": {
+                            "type": "number"
+                        }
+                    }
+                },
+                "electionId": {
+                    "type": "string"
+                },
+                "ok": {
+                    "type": "number"
+                },
+                "$clusterTime": {
+                    "type": "object",
+                    "properties": {
+                        "clusterTime": {
+                            "type": "string"
+                        },
+                        "signature": {
+                            "type": "object",
+                            "properties": {
+                                "hash": {
+                                    "type":"string"
+                                },
+                                "keyId": {
+                                    "type":"string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationTime": {
+                    "type": "string"
+                },
+                "deletedCount": {
+                    "type": "number"
+                }
+            }
+        }
+    }
+}
