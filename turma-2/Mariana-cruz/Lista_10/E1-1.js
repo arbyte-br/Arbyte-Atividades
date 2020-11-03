@@ -16,4 +16,5 @@ class User {
 
 let user = new User();
 
-console.log(user);
+console.log(`Bem vindo, usuário ${user.nome}!`);
+
